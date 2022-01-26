@@ -14,37 +14,414 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/1.jpg
-    - Assets/1.jpg.meta
-    - Assets/2.jpg
-    - Assets/2.jpg.meta
+    - Assets/Animations.meta
+    - Assets/Animations/Idle.anim
+    - Assets/Animations/Idle.anim.meta
+    - Assets/Animations/OptionClose.anim
+    - Assets/Animations/OptionClose.anim.meta
+    - Assets/Animations/OptionOpen.anim
+    - Assets/Animations/OptionOpen.anim.meta
+    - Assets/Animations/Options.controller
+    - Assets/Animations/Options.controller.meta
     - Assets/ArrowMovement.cs
     - Assets/ArrowMovement.cs.meta
+    - Assets/CloseIcon.png
+    - Assets/CloseIcon.png.meta
+    - Assets/Compass.png
+    - Assets/Compass.png.meta
+    - Assets/Compass2.png
+    - Assets/Compass2.png.meta
+    - Assets/CompassDirection.cs
+    - Assets/CompassDirection.cs.meta
+    - Assets/EOM_Logo.png
+    - Assets/EOM_Logo.png.meta
     - Assets/GraphInfo.meta
     - Assets/GraphInfo/GraphInfo.txt
     - Assets/GraphInfo/GraphInfo.txt.meta
     - Assets/GraphInfo/GraphInfomation.cs
     - Assets/GraphInfo/GraphInfomation.cs.meta
+    - Assets/GraphInfo/GuideChangeInformation.txt
+    - Assets/GraphInfo/GuideChangeInformation.txt.meta
+    - Assets/GraphInfo/GuideSystem.cs
+    - Assets/GraphInfo/GuideSystem.cs.meta
     - Assets/MainMenu.unity
     - Assets/MainMenu.unity.meta
     - Assets/Movement.cs
     - Assets/Movement.cs.meta
+    - Assets/OptionMenu.asset
+    - Assets/OptionMenu.asset.meta
     - Assets/Resources.meta
+    - Assets/Resources/Images.meta
+    - Assets/Resources/Images/000.jpeg
+    - Assets/Resources/Images/000.jpeg.meta
+    - Assets/Resources/Images/001.jpeg
+    - Assets/Resources/Images/001.jpeg.meta
+    - Assets/Resources/Images/002.jpeg
+    - Assets/Resources/Images/002.jpeg.meta
+    - Assets/Resources/Images/003.jpeg
+    - Assets/Resources/Images/003.jpeg.meta
+    - Assets/Resources/Images/004.jpeg
+    - Assets/Resources/Images/004.jpeg.meta
+    - Assets/Resources/Images/005.jpeg
+    - Assets/Resources/Images/005.jpeg.meta
+    - Assets/Resources/Images/006.jpeg
+    - Assets/Resources/Images/006.jpeg.meta
+    - Assets/Resources/Images/007.jpeg
+    - Assets/Resources/Images/007.jpeg.meta
+    - Assets/Resources/Images/008.jpeg
+    - Assets/Resources/Images/008.jpeg.meta
+    - Assets/Resources/Images/009.jpeg
+    - Assets/Resources/Images/009.jpeg.meta
+    - Assets/Resources/Images/010.jpeg
+    - Assets/Resources/Images/010.jpeg.meta
+    - Assets/Resources/Images/011.jpeg
+    - Assets/Resources/Images/011.jpeg.meta
+    - Assets/Resources/Images/012.jpeg
+    - Assets/Resources/Images/012.jpeg.meta
+    - Assets/Resources/Images/013.jpeg
+    - Assets/Resources/Images/013.jpeg.meta
+    - Assets/Resources/Images/014.jpeg
+    - Assets/Resources/Images/014.jpeg.meta
+    - Assets/Resources/Images/015.jpeg
+    - Assets/Resources/Images/015.jpeg.meta
+    - Assets/Resources/Images/016.jpeg
+    - Assets/Resources/Images/016.jpeg.meta
+    - Assets/Resources/Images/017.jpeg
+    - Assets/Resources/Images/017.jpeg.meta
+    - Assets/Resources/Images/018.jpeg
+    - Assets/Resources/Images/018.jpeg.meta
+    - Assets/Resources/Images/019.jpeg
+    - Assets/Resources/Images/019.jpeg.meta
+    - Assets/Resources/Images/020.jpeg
+    - Assets/Resources/Images/020.jpeg.meta
+    - Assets/Resources/Images/021.jpeg
+    - Assets/Resources/Images/021.jpeg.meta
+    - Assets/Resources/Images/022.jpeg
+    - Assets/Resources/Images/022.jpeg.meta
+    - Assets/Resources/Images/023.jpeg
+    - Assets/Resources/Images/023.jpeg.meta
+    - Assets/Resources/Images/024.jpeg
+    - Assets/Resources/Images/024.jpeg.meta
+    - Assets/Resources/Images/025.jpeg
+    - Assets/Resources/Images/025.jpeg.meta
+    - Assets/Resources/Images/026.jpeg
+    - Assets/Resources/Images/026.jpeg.meta
+    - Assets/Resources/Images/027.jpeg
+    - Assets/Resources/Images/027.jpeg.meta
+    - Assets/Resources/Images/028.jpeg
+    - Assets/Resources/Images/028.jpeg.meta
+    - Assets/Resources/Images/030.jpeg
+    - Assets/Resources/Images/030.jpeg.meta
+    - Assets/Resources/Images/031.jpeg
+    - Assets/Resources/Images/031.jpeg.meta
+    - Assets/Resources/Images/032.jpeg
+    - Assets/Resources/Images/032.jpeg.meta
+    - Assets/Resources/Images/033.jpeg
+    - Assets/Resources/Images/033.jpeg.meta
+    - Assets/Resources/Images/034.jpeg
+    - Assets/Resources/Images/034.jpeg.meta
+    - Assets/Resources/Images/035.jpeg
+    - Assets/Resources/Images/035.jpeg.meta
+    - Assets/Resources/Images/036.jpeg
+    - Assets/Resources/Images/036.jpeg.meta
+    - Assets/Resources/Images/037.jpeg
+    - Assets/Resources/Images/037.jpeg.meta
+    - Assets/Resources/Images/038.jpg
+    - Assets/Resources/Images/038.jpg.meta
+    - Assets/Resources/Images/039.jpg
+    - Assets/Resources/Images/039.jpg.meta
     - Assets/Resources/MovementArrows.meta
     - Assets/Resources/MovementArrows/000.prefab
     - Assets/Resources/MovementArrows/000.prefab.meta
     - Assets/Resources/MovementArrows/001.prefab
     - Assets/Resources/MovementArrows/001.prefab.meta
+    - Assets/Resources/MovementArrows/002.prefab
+    - Assets/Resources/MovementArrows/002.prefab.meta
+    - Assets/Resources/MovementArrows/003.prefab
+    - Assets/Resources/MovementArrows/003.prefab.meta
+    - Assets/Resources/MovementArrows/004.prefab
+    - Assets/Resources/MovementArrows/004.prefab.meta
+    - Assets/Resources/MovementArrows/005.prefab
+    - Assets/Resources/MovementArrows/005.prefab.meta
+    - Assets/Resources/MovementArrows/006.prefab
+    - Assets/Resources/MovementArrows/006.prefab.meta
+    - Assets/Resources/MovementArrows/007.prefab
+    - Assets/Resources/MovementArrows/007.prefab.meta
+    - Assets/Resources/MovementArrows/008.prefab
+    - Assets/Resources/MovementArrows/008.prefab.meta
+    - Assets/Resources/MovementArrows/009.prefab
+    - Assets/Resources/MovementArrows/009.prefab.meta
+    - Assets/Resources/MovementArrows/010.prefab
+    - Assets/Resources/MovementArrows/010.prefab.meta
+    - Assets/Resources/MovementArrows/011.prefab
+    - Assets/Resources/MovementArrows/011.prefab.meta
+    - Assets/Resources/MovementArrows/012.prefab
+    - Assets/Resources/MovementArrows/012.prefab.meta
+    - Assets/Resources/MovementArrows/013.prefab
+    - Assets/Resources/MovementArrows/013.prefab.meta
+    - Assets/Resources/MovementArrows/014.prefab
+    - Assets/Resources/MovementArrows/014.prefab.meta
+    - Assets/Resources/MovementArrows/015.prefab
+    - Assets/Resources/MovementArrows/015.prefab.meta
+    - Assets/Resources/MovementArrows/016.prefab
+    - Assets/Resources/MovementArrows/016.prefab.meta
+    - Assets/Resources/MovementArrows/017.prefab
+    - Assets/Resources/MovementArrows/017.prefab.meta
+    - Assets/Resources/MovementArrows/018.prefab
+    - Assets/Resources/MovementArrows/018.prefab.meta
+    - Assets/Resources/MovementArrows/019.prefab
+    - Assets/Resources/MovementArrows/019.prefab.meta
+    - Assets/Resources/MovementArrows/020.prefab
+    - Assets/Resources/MovementArrows/020.prefab.meta
+    - Assets/Resources/MovementArrows/021.prefab
+    - Assets/Resources/MovementArrows/021.prefab.meta
+    - Assets/Resources/MovementArrows/022.prefab
+    - Assets/Resources/MovementArrows/022.prefab.meta
+    - Assets/Resources/MovementArrows/023.prefab
+    - Assets/Resources/MovementArrows/023.prefab.meta
+    - Assets/Resources/MovementArrows/024.prefab
+    - Assets/Resources/MovementArrows/024.prefab.meta
+    - Assets/Resources/MovementArrows/025.prefab
+    - Assets/Resources/MovementArrows/025.prefab.meta
+    - Assets/Resources/MovementArrows/026.prefab
+    - Assets/Resources/MovementArrows/026.prefab.meta
+    - Assets/Resources/MovementArrows/027.prefab
+    - Assets/Resources/MovementArrows/027.prefab.meta
+    - Assets/Resources/MovementArrows/028.prefab
+    - Assets/Resources/MovementArrows/028.prefab.meta
+    - Assets/Resources/MovementArrows/029.prefab
+    - Assets/Resources/MovementArrows/029.prefab.meta
+    - Assets/Resources/MovementArrows/030.prefab
+    - Assets/Resources/MovementArrows/030.prefab.meta
+    - Assets/Resources/MovementArrows/031.prefab
+    - Assets/Resources/MovementArrows/031.prefab.meta
+    - Assets/Resources/MovementArrows/032.prefab
+    - Assets/Resources/MovementArrows/032.prefab.meta
+    - Assets/Resources/MovementArrows/033.prefab
+    - Assets/Resources/MovementArrows/033.prefab.meta
+    - Assets/Resources/MovementArrows/034.prefab
+    - Assets/Resources/MovementArrows/034.prefab.meta
+    - Assets/Resources/MovementArrows/035.prefab
+    - Assets/Resources/MovementArrows/035.prefab.meta
+    - Assets/Resources/MovementArrows/036.prefab
+    - Assets/Resources/MovementArrows/036.prefab.meta
+    - Assets/Resources/MovementArrows/037.prefab
+    - Assets/Resources/MovementArrows/037.prefab.meta
+    - Assets/Resources/MovementArrows/038.prefab
+    - Assets/Resources/MovementArrows/038.prefab.meta
+    - Assets/Resources/MovementArrows/039.prefab
+    - Assets/Resources/MovementArrows/039.prefab.meta
+    - Assets/Resources/MovementArrows/040.prefab
+    - Assets/Resources/MovementArrows/040.prefab.meta
+    - Assets/Resources/MovementArrows/041.prefab
+    - Assets/Resources/MovementArrows/041.prefab.meta
+    - Assets/Resources/MovementArrows/042.prefab
+    - Assets/Resources/MovementArrows/042.prefab.meta
+    - Assets/Resources/MovementArrows/043.prefab
+    - Assets/Resources/MovementArrows/043.prefab.meta
+    - Assets/Resources/MovementArrows/044.prefab
+    - Assets/Resources/MovementArrows/044.prefab.meta
+    - Assets/Resources/MovementArrows/045.prefab
+    - Assets/Resources/MovementArrows/045.prefab.meta
+    - Assets/Resources/MovementArrows/046.prefab
+    - Assets/Resources/MovementArrows/046.prefab.meta
+    - Assets/Resources/MovementArrows/047.prefab
+    - Assets/Resources/MovementArrows/047.prefab.meta
+    - Assets/Resources/MovementArrows/048.prefab
+    - Assets/Resources/MovementArrows/048.prefab.meta
+    - Assets/Resources/MovementArrows/049.prefab
+    - Assets/Resources/MovementArrows/049.prefab.meta
+    - Assets/Resources/MovementArrows/050.prefab
+    - Assets/Resources/MovementArrows/050.prefab.meta
+    - Assets/Resources/MovementArrows/051.prefab
+    - Assets/Resources/MovementArrows/051.prefab.meta
     - Assets/Resources/Skyboxs.meta
-    - Assets/Resources/Skyboxs/Test.mat
-    - Assets/Resources/Skyboxs/Test.mat.meta
-    - Assets/Resources/Skyboxs/Test2.mat
-    - Assets/Resources/Skyboxs/Test2.mat.meta
+    - Assets/Resources/Skyboxs/000.mat
+    - Assets/Resources/Skyboxs/000.mat.meta
+    - Assets/Resources/Skyboxs/001.mat
+    - Assets/Resources/Skyboxs/001.mat.meta
+    - Assets/Resources/Skyboxs/002.mat
+    - Assets/Resources/Skyboxs/002.mat.meta
+    - Assets/Resources/Skyboxs/003.mat
+    - Assets/Resources/Skyboxs/003.mat.meta
+    - Assets/Resources/Skyboxs/004.mat
+    - Assets/Resources/Skyboxs/004.mat.meta
+    - Assets/Resources/Skyboxs/005.mat
+    - Assets/Resources/Skyboxs/005.mat.meta
+    - Assets/Resources/Skyboxs/006.mat
+    - Assets/Resources/Skyboxs/006.mat.meta
+    - Assets/Resources/Skyboxs/007.mat
+    - Assets/Resources/Skyboxs/007.mat.meta
+    - Assets/Resources/Skyboxs/008.mat
+    - Assets/Resources/Skyboxs/008.mat.meta
+    - Assets/Resources/Skyboxs/009.mat
+    - Assets/Resources/Skyboxs/009.mat.meta
+    - Assets/Resources/Skyboxs/010.mat
+    - Assets/Resources/Skyboxs/010.mat.meta
+    - Assets/Resources/Skyboxs/011.mat
+    - Assets/Resources/Skyboxs/011.mat.meta
+    - Assets/Resources/Skyboxs/012.mat
+    - Assets/Resources/Skyboxs/012.mat.meta
+    - Assets/Resources/Skyboxs/013.mat
+    - Assets/Resources/Skyboxs/013.mat.meta
+    - Assets/Resources/Skyboxs/014.mat
+    - Assets/Resources/Skyboxs/014.mat.meta
+    - Assets/Resources/Skyboxs/015.mat
+    - Assets/Resources/Skyboxs/015.mat.meta
+    - Assets/Resources/Skyboxs/016.mat
+    - Assets/Resources/Skyboxs/016.mat.meta
+    - Assets/Resources/Skyboxs/017.mat
+    - Assets/Resources/Skyboxs/017.mat.meta
+    - Assets/Resources/Skyboxs/018.mat
+    - Assets/Resources/Skyboxs/018.mat.meta
+    - Assets/Resources/Skyboxs/019.mat
+    - Assets/Resources/Skyboxs/019.mat.meta
+    - Assets/Resources/Skyboxs/020.mat
+    - Assets/Resources/Skyboxs/020.mat.meta
+    - Assets/Resources/Skyboxs/021.mat
+    - Assets/Resources/Skyboxs/021.mat.meta
+    - Assets/Resources/Skyboxs/022.mat
+    - Assets/Resources/Skyboxs/022.mat.meta
+    - Assets/Resources/Skyboxs/023.mat
+    - Assets/Resources/Skyboxs/023.mat.meta
+    - Assets/Resources/Skyboxs/024.mat
+    - Assets/Resources/Skyboxs/024.mat.meta
+    - Assets/Resources/Skyboxs/025.mat
+    - Assets/Resources/Skyboxs/025.mat.meta
+    - Assets/Resources/Skyboxs/026.mat
+    - Assets/Resources/Skyboxs/026.mat.meta
+    - Assets/Resources/Skyboxs/027.mat
+    - Assets/Resources/Skyboxs/027.mat.meta
+    - Assets/Resources/Skyboxs/028.mat
+    - Assets/Resources/Skyboxs/028.mat.meta
+    - Assets/Resources/Skyboxs/029.mat
+    - Assets/Resources/Skyboxs/029.mat.meta
+    - Assets/Resources/Skyboxs/030.mat
+    - Assets/Resources/Skyboxs/030.mat.meta
+    - Assets/Resources/Skyboxs/031.mat
+    - Assets/Resources/Skyboxs/031.mat.meta
+    - Assets/Resources/Skyboxs/032.mat
+    - Assets/Resources/Skyboxs/032.mat.meta
+    - Assets/Resources/Skyboxs/033.mat
+    - Assets/Resources/Skyboxs/033.mat.meta
+    - Assets/Resources/Skyboxs/034.mat
+    - Assets/Resources/Skyboxs/034.mat.meta
+    - Assets/Resources/Skyboxs/035.mat
+    - Assets/Resources/Skyboxs/035.mat.meta
+    - Assets/Resources/Skyboxs/036.mat
+    - Assets/Resources/Skyboxs/036.mat.meta
+    - Assets/Resources/Skyboxs/037.mat
+    - Assets/Resources/Skyboxs/037.mat.meta
+    - Assets/Resources/Skyboxs/038.mat
+    - Assets/Resources/Skyboxs/038.mat.meta
+    - Assets/Resources/Skyboxs/039.mat
+    - Assets/Resources/Skyboxs/039.mat.meta
+    - Assets/Resources/Skyboxs/040.mat
+    - Assets/Resources/Skyboxs/040.mat.meta
+    - Assets/Resources/Skyboxs/041.mat
+    - Assets/Resources/Skyboxs/041.mat.meta
+    - Assets/Resources/Skyboxs/042.mat
+    - Assets/Resources/Skyboxs/042.mat.meta
+    - Assets/Resources/Skyboxs/043.mat
+    - Assets/Resources/Skyboxs/043.mat.meta
+    - Assets/Resources/Skyboxs/044.mat
+    - Assets/Resources/Skyboxs/044.mat.meta
+    - Assets/Resources/Skyboxs/045.mat
+    - Assets/Resources/Skyboxs/045.mat.meta
+    - Assets/Resources/Skyboxs/046.mat
+    - Assets/Resources/Skyboxs/046.mat.meta
+    - Assets/Resources/Skyboxs/049.mat
+    - Assets/Resources/Skyboxs/049.mat.meta
+    - Assets/TextMesh Pro.meta
+    - Assets/TextMesh Pro/Documentation.meta
+    - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
+    - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
+    - Assets/TextMesh Pro/Fonts.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt
+    - Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta
+    - Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+    - Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta
+    - Assets/TextMesh Pro/Resources.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat.meta
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+    - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt
+    - Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt
+    - Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets.meta
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+    - Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets.meta
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset
+    - Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset
+    - Assets/TextMesh Pro/Resources/TMP Settings.asset.meta
+    - Assets/TextMesh Pro/Shaders.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader
+    - Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader
+    - Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
+    - Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta
+    - Assets/TextMesh Pro/Sprites.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt
+    - Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.json
+    - Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
+    - Assets/TextMesh Pro/Sprites/EmojiOne.png
+    - Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
     - Assets/TouchController.cs
     - Assets/TouchController.cs.meta
+    - Assets/TutorialController.cs
+    - Assets/TutorialController.cs.meta
+    - Assets/UIController.cs
+    - Assets/UIController.cs.meta
+    - Assets/Untitled.png
+    - Assets/Untitled.png.meta
+    - ProjectSettings/EditorBuildSettings.asset
+    - ProjectSettings/GraphicsSettings.asset
+    - ProjectSettings/InputManager.asset
     - ProjectSettings/ProjectSettings.asset
+    - ProjectSettings/QualitySettings.asset
+    - ProjectSettings/TagManager.asset
+    - ProjectSettings/UnityConnectSettings.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
