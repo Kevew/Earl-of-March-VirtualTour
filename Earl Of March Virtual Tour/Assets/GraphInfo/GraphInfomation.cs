@@ -5,7 +5,11 @@ using System.IO;
 
 public class GraphInfomation: MonoBehaviour
 {
-
+    //This creates a class of node.
+    //Basically they are the prefabs for where you will go
+    //The first variable is which skybox it will lead to. It is a integer which when placed in listofArrowMovement 
+    //will give you to conresbonding skybox/scene.
+    //The second variable is where the prefab will be in the scene.
     public class node {
         public int arrow;
         public Vector3 location;
@@ -22,19 +26,25 @@ public class GraphInfomation: MonoBehaviour
 
     public List<GameObject> currArrowMovement;
 
+    //The Material means the scene and each one has a list of nodes, which is all the prefab movement objects in
+    //that specific scene.
     public Dictionary<Material, List<node>> arrowlocations = new Dictionary<Material, List<node>>();
+    GuideSystem guidesystem;
 
+    //Sets up the variables as the scripts are not yet connected with the variables.
+    //You may notice that I use awake here instead of Start. Awake goes first before Start.
+    //Basically I need to setup all the variables as a lot of other scripts relay on this one.
     private void Awake()
     {
+        guidesystem = GetComponent<GuideSystem>();
         currentLoc = 0;
         intializeLocations();
         intializePrefabs();
         readgraphInfo();
+        RenderSettings.skybox = listoflocations[currentLoc];
     }
-    public void Start()
-    {
-        LoadNewMovements();
-    }
+
+    //This one intilizes all the locations as materials.
     void intializeLocations()
     {
         Object[] templist = Resources.LoadAll("Skyboxs");
@@ -43,9 +53,9 @@ public class GraphInfomation: MonoBehaviour
             listoflocations.Add(Resources.Load("Skyboxs/" + temp.name) as Material);
             i++;
         }
-        RenderSettings.skybox = listoflocations[currentLoc];
     }
 
+    //This one initalizes all the arrow prefab movement objects
     void intializePrefabs()
     {
         Object[] templist = Resources.LoadAll("MovementArrows");
@@ -57,6 +67,7 @@ public class GraphInfomation: MonoBehaviour
         }
     }
 
+    //This one sets all the locations for the prefabs movement objects.
     void readgraphInfo()
     {
         string path = "Assets/GraphInfo/GraphInfo.txt";
@@ -80,6 +91,7 @@ public class GraphInfomation: MonoBehaviour
     }
 
 
+    //This is goes through all the arrow movements in the scene and instantiates them
     public void LoadNewMovements()
     {
         if(arrowlocations[listoflocations[currentLoc]].Count > 0)
@@ -87,16 +99,24 @@ public class GraphInfomation: MonoBehaviour
             foreach (node g in arrowlocations[listoflocations[currentLoc]])
             {
                 GameObject a = (GameObject)Instantiate(listofArrowMovement[g.arrow], g.location, transform.rotation);
-                Debug.Log(a.name);
+                int curr = int.Parse(a.name.Substring(0,3));
+                if (guidesystem.activated[curr])
+                {
+                    a.GetComponent<Renderer>().material.color = Color.blue;
+                }
+                else
+                {
+                    a.GetComponent<Renderer>().material.color = Color.red;
+                }
                 currArrowMovement.Add(a);
             }
         }
     }
 
-    public void deleteCurrentMovements()
-    {
-        foreach(GameObject g in currArrowMovement)
-        {
+    //This destroys every object currently in the scene. As when you move into the new scene, you 
+    //don't want to previous scene's objects to still be there.
+    public void deleteCurrentMovements(){
+        foreach(GameObject g in currArrowMovement){
             Destroy(g);
         }
         currArrowMovement = new List<GameObject>();
