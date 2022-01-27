@@ -42,6 +42,7 @@ public class GraphInfomation: MonoBehaviour
         intializePrefabs();
         readgraphInfo();
         RenderSettings.skybox = listoflocations[currentLoc];
+        Debug.Log(currentLoc);
     }
 
     //This one intilizes all the locations as materials.
