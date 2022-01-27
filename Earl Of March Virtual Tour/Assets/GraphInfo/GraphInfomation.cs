@@ -20,6 +20,8 @@ public class GraphInfomation: MonoBehaviour
         }
     }
 
+    public GameObject sphereMesh;
+
     public List<Material> listoflocations;
     public List<GameObject> listofArrowMovement;
     public int currentLoc;
@@ -41,7 +43,7 @@ public class GraphInfomation: MonoBehaviour
         intializeLocations();
         intializePrefabs();
         readgraphInfo();
-        RenderSettings.skybox = listoflocations[currentLoc];
+        sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
         Debug.Log(currentLoc);
     }
 
@@ -51,7 +53,7 @@ public class GraphInfomation: MonoBehaviour
         Object[] templist = Resources.LoadAll("Skyboxs");
         int i = 0;
         foreach (Object temp in templist){
-            listoflocations.Add(Resources.Load("Skyboxs/" + temp.name) as Material);
+            listoflocations.Add(temp as Material);
             i++;
         }
     }
@@ -63,7 +65,7 @@ public class GraphInfomation: MonoBehaviour
         int i = 0;
         foreach (Object temp in templist)
         {
-            listofArrowMovement.Add(Resources.Load("MovementArrows/" + temp.name) as GameObject);
+            listofArrowMovement.Add(temp as GameObject);
             i++;
         }
     }
@@ -71,9 +73,9 @@ public class GraphInfomation: MonoBehaviour
     //This one sets all the locations for the prefabs movement objects.
     void readgraphInfo()
     {
-        string path = "Assets/GraphInfo/GraphInfo.txt";
-        StreamReader reader = new StreamReader(path, true);
-        string temp = reader.ReadToEnd();
+        Object path = Resources.Load("GraphInfo");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
         string[] lines = temp.Split("\n"[0]);
         int j = 0;
         foreach (string line in lines){

@@ -7,12 +7,14 @@ public class GuideSystem : MonoBehaviour
 {
 
     public List<Material> a;
-    public Dictionary<Material, List<Material>> edges = new Dictionary<Material, List<Material>>();
+    public Dictionary<string, List<Material>> edges = new Dictionary<string, List<Material>>();
     public List<bool> activated;
     GraphInfomation graphinformation;
 
     public Material currentguide;
     public UIController uicontroller;
+
+    public GameObject sphereMesh;
 
     //Sets up the variables as the scripts are not yet connected with the variables
     void Awake(){
@@ -30,7 +32,7 @@ public class GuideSystem : MonoBehaviour
         int i = 0;
         foreach (Object temp in templist)
         {
-            a.Add(Resources.Load("Skyboxs/" + temp.name) as Material);
+            a.Add(temp as Material);
             i++;
         }
         InitializeDict();
@@ -41,20 +43,20 @@ public class GuideSystem : MonoBehaviour
 
     //Set's up all the edges between the scenes so that I can create the path.
     void InitializeDict(){
-        string path = "Assets/GraphInfo/GraphInfo.txt";
-        StreamReader reader = new StreamReader(path, true);
-        string temp = reader.ReadToEnd();
+        Object path = Resources.Load("GraphInfo");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
         string[] lines = temp.Split("\n"[0]);
         int j = 0;
         for(int i = 0;i < a.Count; i++)
         {
-            edges[a[i]] = new List<Material>();
+            edges[a[i].name] = new List<Material>();
         }
         foreach(string line in lines){
             for(int i = 0;i < line.Length-1; i+=22)
             {
                 int curr = int.Parse(line.Substring(i, 3));
-                edges[a[j]].Add(a[curr]);
+                edges[a[j].name].Add(a[curr]);
             }
             j++;
         }
@@ -108,11 +110,11 @@ public class GuideSystem : MonoBehaviour
         while(bfs.Count > 0){
             node temp = bfs.Peek();
             bfs.Dequeue();
-            if(temp.time < fastest[int.Parse(temp.location.name)].time)
+            if (temp.time < fastest[int.Parse(temp.location.name.Substring(0, 3))].time)
             {
-                fastest[int.Parse(temp.location.name)].time = temp.time;
-                fastest[int.Parse(temp.location.name)].prev = temp.prev;
-                foreach (Material edge in edges[temp.location])
+                fastest[int.Parse(temp.location.name.Substring(0, 3))].time = temp.time;
+                fastest[int.Parse(temp.location.name.Substring(0, 3))].prev = temp.prev;
+                foreach (Material edge in edges[temp.location.name.Substring(0,3)])
                 {
                     bfs.Enqueue(new node(temp.time + 1, edge, temp.location));
                 }
@@ -127,8 +129,8 @@ public class GuideSystem : MonoBehaviour
         //fastestnode set this location prefab movement to true so it will display blue when shown.
         //Using the fastestnode go to the prev node and continue until you reach your current location.
         while (temp2 != a){
-            activated[int.Parse(temp2.name)] = true;
-            temp2 = fastest[int.Parse(temp2.name)].prev;
+            activated[int.Parse(temp2.name.Substring(0, 3))] = true;
+            temp2 = fastest[int.Parse(temp2.name.Substring(0, 3))].prev;
         }
         //Change color of arrows of the prefabs in the current scenes as it doesn't update automatically.
         foreach(GameObject obj in graphinformation.currArrowMovement)
@@ -147,8 +149,8 @@ public class GuideSystem : MonoBehaviour
     public void teleportsystem(Material setnew)
     {
         graphinformation.deleteCurrentMovements();
-        RenderSettings.skybox = setnew;
-        graphinformation.currentLoc = int.Parse(setnew.name);
+        sphereMesh.GetComponent<Renderer>().material = setnew;
+        graphinformation.currentLoc = int.Parse(setnew.name.Substring(0, 3));
         graphinformation.LoadNewMovements();
     }
 }

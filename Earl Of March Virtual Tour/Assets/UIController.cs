@@ -28,10 +28,17 @@ public class UIController : MonoBehaviour
 
     public GameObject StartScreen;
 
+    //Guide System Objects
     public GameObject movementButton;
     public GameObject teleButton;
 
+    public GameObject sphereMesh;
+
     public GameObject enableGuideSystemUIbutton;
+
+    //Teacher UI Info
+    public GameObject teacherinfo;
+    public GameObject closeTeacherinfo;
 
     public Dictionary<string, int> info = new Dictionary<string, int>();
     public Dictionary<int, string> seinfo = new Dictionary<int, string>();
@@ -42,6 +49,17 @@ public class UIController : MonoBehaviour
         guideortele = 1;
         setup();
         guideSystem = GetComponent<GuideSystem>();
+    }
+
+    //Enable the Teacher Info UI
+    public void openTeacherinfo()
+    {
+        teacherinfo.SetActive(true);
+    }
+    //Disable the Teacher Info UI
+    public void disableTeacherinfo()
+    {
+        teacherinfo.SetActive(false);
     }
 
     //Opens up the guidesystem UI
@@ -103,6 +121,11 @@ public class UIController : MonoBehaviour
     //Opens the option menu + little animation
     public void openOptions()
     {
+        //Disables the welcome to Earl screen so that it doesn't collide with the settings UI
+        if (StartScreen.activeSelf)
+        {
+            StartScreen.SetActive(false);
+        }
         Animator temp = options.GetComponent<Animator>();
         options.SetActive(true);
         optiontext.SetActive(true);
@@ -139,9 +162,9 @@ public class UIController : MonoBehaviour
     //Basically the scripts are not connected with the assets and this function of code does it
     void setup()
     {
-        string path = "Assets/GraphInfo/GuideChangeInformation.txt";
-        StreamReader reader = new StreamReader(path, true);
-        string temp = reader.ReadToEnd();
+        Object path = Resources.Load("GuideChangeInformation");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
         string[] lines = temp.Split("\n"[0]);
         foreach (string line in lines)
         {
@@ -182,13 +205,13 @@ public class UIController : MonoBehaviour
     public void enterButtonPush(){
         if(info.ContainsKey(input.text)){
             if (guideortele == 1){
-                if(RenderSettings.skybox != guideSystem.a[info[input.text]]){
-                    guideSystem.findpath(RenderSettings.skybox, guideSystem.a[info[input.text]]);
+                if(sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[input.text]]){
+                    guideSystem.findpath(sphereMesh.GetComponent<Renderer>().material, guideSystem.a[info[input.text]]);
                 }else{
                     input.text = "Error:Same location";
                 }
             }else{
-                if (RenderSettings.skybox != guideSystem.a[info[input.text]]){
+                if (sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[input.text]]){
                     guideSystem.teleportsystem(guideSystem.a[info[input.text]]);
                 }else{
                     input.text = "Error:Same location";

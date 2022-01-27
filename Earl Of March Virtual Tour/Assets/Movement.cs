@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
     public Text enableAtLocationText;
     public GameObject enableAtLocation;
 
+    public GameObject sphereMesh;
+
     //Get variables
     void Awake()
     {
@@ -52,21 +54,19 @@ public class Movement : MonoBehaviour
         }
     }
 
-
-
     //Performs the movement or change skybox
     IEnumerator movementTime(int id1){
         //We wait for the zoom in effect which is approximately 0.3 seconds.
         yield return new WaitForSeconds(0.3f);
         GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
         //This line sets the location as a new place
-        RenderSettings.skybox = graphinfo.listoflocations[id1];
+        sphereMesh.GetComponent<Renderer>().material = graphinfo.listoflocations[id1];
         //This checks whether the guide path exists and if we reached our location, if it does it disables the path
         if(guidesystem.currentguide != null)
         {
-            if (int.Parse(guidesystem.currentguide.name) == id1)
+            if (int.Parse(guidesystem.currentguide.name.Substring(0, 3)) == id1)
             {
-                enableAtLocationText.text = "You've reached " + uicontroller.seinfo[int.Parse(guidesystem.currentguide.name)];
+                enableAtLocationText.text = "You've reached " + uicontroller.seinfo[int.Parse(guidesystem.currentguide.name.Substring(0, 3))];
                 guidesystem.currentguide = null;
                 enableAtLocation.SetActive(true);
             }
@@ -87,7 +87,7 @@ public class Movement : MonoBehaviour
             if(guidesystem.currentguide != null)
             {
                 //Create new path
-                guidesystem.findpath(RenderSettings.skybox, guidesystem.currentguide);
+                guidesystem.findpath(sphereMesh.GetComponent<Renderer>().material, guidesystem.currentguide);
             }
         }
         //Adds the new scene prefabs
