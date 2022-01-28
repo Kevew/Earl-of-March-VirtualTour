@@ -55,14 +55,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TutorialController.cs" />
-    <Compile Include="Assets\CompassDirection.cs" />
-    <Compile Include="Assets\ArrowMovement.cs" />
-    <Compile Include="Assets\GraphInfo\GuideSystem.cs" />
-    <Compile Include="Assets\GraphInfo\GraphInfomation.cs" />
-    <Compile Include="Assets\UIController.cs" />
-    <Compile Include="Assets\Movement.cs" />
-    <Compile Include="Assets\TouchController.cs" />
+    <Compile Include="Assets\Scripts\TutorialController.cs" />
+    <Compile Include="Assets\Scripts\CompassDirection.cs" />
+    <Compile Include="Assets\Scripts\ArrowMovement.cs" />
+    <Compile Include="Assets\Scripts\GuideSystem.cs" />
+    <Compile Include="Assets\Scripts\GraphInfomation.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\TouchController.cs" />
+    <Compile Include="Assets\Scripts\VideoPlayerScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -70,6 +71,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\Fonts\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Resources\GuideChangeInformation.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
