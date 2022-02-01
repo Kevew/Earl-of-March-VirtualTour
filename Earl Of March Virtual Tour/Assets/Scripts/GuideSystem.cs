@@ -148,6 +148,11 @@ public class GuideSystem : MonoBehaviour
     //And load the new prefabs
     public void teleportsystem(Material setnew)
     {
+        for (int i = 0; i < 1000; i++)
+        {
+            activated[i] = false;
+        }
+        currentguide = null;
         graphinformation.deleteCurrentMovements();
         sphereMesh.GetComponent<Renderer>().material = setnew;
         graphinformation.currentLoc = int.Parse(setnew.name.Substring(0, 3));
