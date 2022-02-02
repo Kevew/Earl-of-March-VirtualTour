@@ -41,7 +41,6 @@ public class GraphInfomation: MonoBehaviour
         guidesystem = GetComponent<GuideSystem>();
         currentLoc = 0;
         intializeLocations();
-        intializePrefabs();
         readgraphInfo();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
         Debug.Log(currentLoc);
@@ -54,18 +53,6 @@ public class GraphInfomation: MonoBehaviour
         int i = 0;
         foreach (Object temp in templist){
             listoflocations.Add(temp as Material);
-            i++;
-        }
-    }
-
-    //This one initalizes all the arrow prefab movement objects
-    void intializePrefabs()
-    {
-        Object[] templist = Resources.LoadAll("MovementArrows");
-        int i = 0;
-        foreach (Object temp in templist)
-        {
-            listofArrowMovement.Add(temp as GameObject);
             i++;
         }
     }

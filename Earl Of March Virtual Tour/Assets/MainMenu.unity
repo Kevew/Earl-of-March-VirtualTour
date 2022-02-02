@@ -1716,7 +1716,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 342364342}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1307694175}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: exittutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &342364342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,7 +6531,97 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereMesh: {fileID: 461530453}
   listoflocations: []
-  listofArrowMovement: []
+  listofArrowMovement:
+  - {fileID: 1725822456792265743, guid: f0d18060890ae0645a0b76b29cb144c6, type: 3}
+  - {fileID: 3599165309359308765, guid: 6afbcb5758cbb064985f598d415db634, type: 3}
+  - {fileID: 6965670569981621471, guid: d128350cbb80fc449854f03370058cfc, type: 3}
+  - {fileID: 3179444269985302819, guid: c76b939201dd29f448418b0fa0bf9dd3, type: 3}
+  - {fileID: 8785868697710253898, guid: fbc780914d89b2d488a0b85db4375f54, type: 3}
+  - {fileID: 6751416818730408615, guid: 758d49ca61f36aa4692a41f324df1a08, type: 3}
+  - {fileID: 6649675276012470389, guid: 6718eb786531b9045aaf59a82e037b1d, type: 3}
+  - {fileID: 7129507003018410450, guid: b55c342fd5c92874f8fd847ad8b3788d, type: 3}
+  - {fileID: 4098495547430909878, guid: 72defae0bd04554469ddacc0162e0deb, type: 3}
+  - {fileID: 3870638242687775934, guid: f2ef6db2da08e544a8fbdba31d99d248, type: 3}
+  - {fileID: 5489482748121695730, guid: 7b40baed0df48d649b357632d4255cb9, type: 3}
+  - {fileID: 5559685975598495739, guid: 667d37832f239e541b029f0979ee56b1, type: 3}
+  - {fileID: 8873461609205244235, guid: f53de15aadeb3954c8bc81d22e052c0e, type: 3}
+  - {fileID: 6152314865724865499, guid: 37a27461459fbea4d823169d46271814, type: 3}
+  - {fileID: 5696363589077701144, guid: ba68bb63b729a5b4a9e8dc493090daf5, type: 3}
+  - {fileID: 1938630281931051375, guid: a4dd3a0de4483dd4db0ed8db191bdea8, type: 3}
+  - {fileID: 2070425046359915022, guid: 1a06e5e5bc6b40c47b08fe7132651a31, type: 3}
+  - {fileID: 7953550805207667428, guid: 921c007a2878ed84e8e600aec58408af, type: 3}
+  - {fileID: 8597945846054005383, guid: e5300346d8fcace43a6a4aad364f2034, type: 3}
+  - {fileID: 927234874997957885, guid: 18d5675fe69afc14699c6773698d5ed4, type: 3}
+  - {fileID: 3987341793627980574, guid: 71e595541127e1249b9219f71814c507, type: 3}
+  - {fileID: 6918400580667379702, guid: 891ab5537c9d442479906527f7ffaa31, type: 3}
+  - {fileID: 1657104276282476094, guid: cd94bb49f10d87b4aba5f6340b9b12ba, type: 3}
+  - {fileID: 1657104276282476094, guid: 51baa5710ea843b47a9f48eb0b24808a, type: 3}
+  - {fileID: 1657104276282476094, guid: 16b92feb2e54a7047bab77d88f1d2b33, type: 3}
+  - {fileID: 1657104276282476094, guid: cc08d8a832c6d254da0a05568aff2a01, type: 3}
+  - {fileID: 1657104276282476094, guid: 462d94be117076c449f356ee3fcd1f38, type: 3}
+  - {fileID: 1657104276282476094, guid: ae2eff7b54ceee546b2bf60c498537b0, type: 3}
+  - {fileID: 1657104276282476094, guid: 9bff2c8369120144689dc15134874bf7, type: 3}
+  - {fileID: 1657104276282476094, guid: cd5d61181887996419249a7821ab3ec2, type: 3}
+  - {fileID: 1657104276282476094, guid: 5b2f9bf6a9768cb4eb7644964302368c, type: 3}
+  - {fileID: 1657104276282476094, guid: 1a451719a61496b469613fe2b776dcfb, type: 3}
+  - {fileID: 1657104276282476094, guid: a18857cff61e92a4f91a88d0a30b8de6, type: 3}
+  - {fileID: 8008440108347916020, guid: 146f8c6472e689e4e9900e42da865358, type: 3}
+  - {fileID: 2560720687035665258, guid: 0977613e9bb856145b72bbf42d2d611b, type: 3}
+  - {fileID: 2370637471075294857, guid: 413771caac3b31948871f8b06d3fa896, type: 3}
+  - {fileID: 759009839653097893, guid: 8fec182b2a67e134381b9bc13ab76004, type: 3}
+  - {fileID: 4529938087361018813, guid: a80257df2dfbb3f4caef71fe83cbf8ba, type: 3}
+  - {fileID: 852568003840387080, guid: d0105475dc50dd248893b5acfd383c2e, type: 3}
+  - {fileID: 852568003840387080, guid: cfe075557fb9b05439d64e937fbfa85a, type: 3}
+  - {fileID: 7187753023610816018, guid: cb33e85ebd392c644b12c35a1332cb7d, type: 3}
+  - {fileID: 1376192206275499276, guid: 0099600aeb5593645ab7937fc5be0933, type: 3}
+  - {fileID: 1856775678558157621, guid: bee5d31f481c4574eaf2d339798bf4e9, type: 3}
+  - {fileID: 3498917896587163476, guid: ae6a4421434009f41adb3e5b87cefef5, type: 3}
+  - {fileID: 6536375259878591886, guid: d972aa427f4932f45ba7e0eeb0dddf0c, type: 3}
+  - {fileID: 2335953498082149598, guid: 1e6a2acea9032e74e93fd3894a8b8b2b, type: 3}
+  - {fileID: 6194634389076096444, guid: 7468bfe50adf6d541bc010f1f6da7479, type: 3}
+  - {fileID: 9113034931219242772, guid: cf883917dff05fa4ba64ccfff92a2114, type: 3}
+  - {fileID: 3237960415753335074, guid: 98e02b8bb1b3b8e49b5ecb93778f7c33, type: 3}
+  - {fileID: 7807344130324788147, guid: ba17f660c84549a408d779daeca6f826, type: 3}
+  - {fileID: 5557333092728409307, guid: 3a93c103589cdde488c12f3d4fed500d, type: 3}
+  - {fileID: 1720121860670442893, guid: 4ac6f74bef9c7b84c88e212e482c4301, type: 3}
+  - {fileID: 1720121860670442893, guid: 2ab3d5b608cb5b34d82597f44fe993b5, type: 3}
+  - {fileID: 1720121860670442893, guid: 8cc6939b30d5c004888785952e3e3dbc, type: 3}
+  - {fileID: 1720121860670442893, guid: 7b54aaf49c7c0d04ea9db9ee3e85ace0, type: 3}
+  - {fileID: 1720121860670442893, guid: fdf39dbc9a1b4cc4980ac125272e5513, type: 3}
+  - {fileID: 1720121860670442893, guid: bcabb61c48252f7439fcf3bc993392e9, type: 3}
+  - {fileID: 1720121860670442893, guid: bc8d96b1e5e21fe48b899c73bf7c86a3, type: 3}
+  - {fileID: 1720121860670442893, guid: 7cd9afaed95a2014b95fd8b3affa5f8c, type: 3}
+  - {fileID: 1720121860670442893, guid: 0855e4a99c3fd534c916b7ae45935a2f, type: 3}
+  - {fileID: 1720121860670442893, guid: 21d2c9951f82aa7409a876ed1ada5fac, type: 3}
+  - {fileID: 1720121860670442893, guid: 23317ae13f7d4b04f898375b804b4dba, type: 3}
+  - {fileID: 1720121860670442893, guid: c5c9d0c9158a6534cbc3cee3cb37c986, type: 3}
+  - {fileID: 1720121860670442893, guid: f91d043c95eda4b4987b96b4cfe0a909, type: 3}
+  - {fileID: 1720121860670442893, guid: 265101b934e7d1147b434c9b295d34db, type: 3}
+  - {fileID: 1720121860670442893, guid: a31aef35323ddf7458bd92fddcaec37d, type: 3}
+  - {fileID: 1720121860670442893, guid: 04934f5c171db194d8198c932e62f33c, type: 3}
+  - {fileID: 1720121860670442893, guid: 0819d2ef505beba4097ebe6160766e26, type: 3}
+  - {fileID: 1720121860670442893, guid: c0eda24ed30642c4bad34759b7f22a74, type: 3}
+  - {fileID: 1720121860670442893, guid: 575926a56ddbb6144a4e7ade67b8bff2, type: 3}
+  - {fileID: 1720121860670442893, guid: 691b24aa32ddeff44a811328177fbaf6, type: 3}
+  - {fileID: 1720121860670442893, guid: 42d312a72830b6a41a7dcf2adef29732, type: 3}
+  - {fileID: 1720121860670442893, guid: 8ea0ed524aecaab4683122a03c28fecf, type: 3}
+  - {fileID: 1720121860670442893, guid: af582bc3802f6c744a9a5d91b36488bc, type: 3}
+  - {fileID: 1720121860670442893, guid: 43748f7231af7544981d40ef8c9ae433, type: 3}
+  - {fileID: 1720121860670442893, guid: 48a0fcc98c5f88e4c8f8e76480b7c020, type: 3}
+  - {fileID: 1720121860670442893, guid: b57fc9a6fc4c7f44a9c2bea1f6d6ac9c, type: 3}
+  - {fileID: 1720121860670442893, guid: 0c11faeaad6bc3c48a14537d93a9dbfc, type: 3}
+  - {fileID: 1720121860670442893, guid: daf03ebdb1d6d4d468dad3ecd8aa13e5, type: 3}
+  - {fileID: 1720121860670442893, guid: 3f4c3c4167ab30c409f21bdf3e12ed91, type: 3}
+  - {fileID: 1720121860670442893, guid: 200603558c1d55241be458f2a6cf6280, type: 3}
+  - {fileID: 1720121860670442893, guid: 5924798f2c70a844bb3286cee1c3e10d, type: 3}
+  - {fileID: 1720121860670442893, guid: 9bd86854c0451b94f898b7a5703ea2e5, type: 3}
+  - {fileID: 1720121860670442893, guid: 1f491056f36d19d47b655231a01ab73c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentLoc: 0
   currArrowMovement: []
 --- !u!114 &1307694174
@@ -7378,9 +7480,9 @@ MonoBehaviour:
   m_Text: "Every location besides the hallway and stairs have a location code. They
     all follow one rule though.\n1. They all start with R\nIf the room you are looking
     for has a number add it to the end of it. Ex: R256, R254, R266, R261\nThere are
-    also special locations. Here is the list:\nROFF = Office *does not work rn\nRCAF
-    = Cafeteria *does not work rn\nRART = Art room \nRCOP = Co op *does not work
-    rn\nRLIB = Library *does not work rn"
+    also special locations. Here is the list:\nROFF = Office\nRCAF = Cafeteria *does
+    not work rn\nRART = Art room \nRCOP = Co op *does not work rn\nRLIB = Library
+    *does not work rn"
 --- !u!222 &1388221271
 CanvasRenderer:
   m_ObjectHideFlags: 0
