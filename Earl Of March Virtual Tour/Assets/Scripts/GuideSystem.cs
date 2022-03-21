@@ -26,15 +26,6 @@ public class GuideSystem : MonoBehaviour
         }
         uicontroller = GetComponent<UIController>();
         graphinformation = GetComponent<GraphInfomation>();
-        a = new List<Material>();
-        //This section brings in all the skyboxs as material
-        Object[] templist = Resources.LoadAll("Skyboxs");
-        int i = 0;
-        foreach (Object temp in templist)
-        {
-            a.Add(temp as Material);
-            i++;
-        }
         InitializeDict();
         //Sets all prefabs in the current location
         graphinformation.LoadNewMovements();

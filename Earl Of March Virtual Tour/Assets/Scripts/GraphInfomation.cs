@@ -40,21 +40,9 @@ public class GraphInfomation: MonoBehaviour
     {
         guidesystem = GetComponent<GuideSystem>();
         currentLoc = 0;
-        intializeLocations();
         readgraphInfo();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
         Debug.Log(currentLoc);
-    }
-
-    //This one intilizes all the locations as materials.
-    void intializeLocations()
-    {
-        Object[] templist = Resources.LoadAll("Skyboxs");
-        int i = 0;
-        foreach (Object temp in templist){
-            listoflocations.Add(temp as Material);
-            i++;
-        }
     }
 
     //This one sets all the locations for the prefabs movement objects.

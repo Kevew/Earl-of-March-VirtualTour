@@ -62,8 +62,9 @@
     <Compile Include="Assets\Scripts\GraphInfomation.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
-    <Compile Include="Assets\Scripts\TouchController.cs" />
     <Compile Include="Assets\Scripts\VideoPlayerScript.cs" />
+    <Compile Include="Assets\Scripts\TouchController.cs" />
+    <Compile Include="Assets\Scripts\ClickableInformation.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
