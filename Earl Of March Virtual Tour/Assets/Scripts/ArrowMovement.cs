@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class ArrowMovement : MonoBehaviour
 {
     private MeshRenderer renderer;
-    public GuideSystem guide;
+    private GuideSystem guide;
     //Set all the variables such as rendere and guide so I can use them later
     void Start()
     {
@@ -19,11 +19,10 @@ public class ArrowMovement : MonoBehaviour
     //Allowing for more player feedback
     private void OnMouseEnter()
     {
-    //    if (IsPointerOverUIElement()){
-            renderer.material.color = Color.green;
+        //    if (IsPointerOverUIElement()){
+        renderer.material.color = new Color(0f, 255f, 0f, 0.0005f);
        // }
     }
-
     //The next 3 functions were my attempt to make it so that it doesn't turn green when it's over a UI element, say
     //the settings. Unfortunately, it caused other bugs so, I don't use this section. That's why if you look 
     //at void OnMouseEnter() I commented out the if function.
@@ -58,11 +57,11 @@ public class ArrowMovement : MonoBehaviour
     {
         if (guide.activated[int.Parse(renderer.name.Substring(0,3))])
         {
-            renderer.material.color = Color.blue;
+            renderer.material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
         }
         else
         {
-            renderer.material.color = Color.red;
+            renderer.material.SetColor("_Color", new Color(255f, 0f, 0f, 0.0005f));
         }
     }
 }

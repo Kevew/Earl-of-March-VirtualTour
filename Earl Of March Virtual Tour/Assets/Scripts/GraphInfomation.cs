@@ -13,10 +13,14 @@ public class GraphInfomation: MonoBehaviour
     public class node {
         public int arrow;
         public Vector3 location;
-        public node(int a, Vector3 b)
+        public Vector3 scale;
+        public int rotation;
+        public node(int a, Vector3 b, Vector3 c, int d)
         {
             arrow = a;
             location = b;
+            scale = c;
+            rotation = d;
         }
     }
 
@@ -54,7 +58,7 @@ public class GraphInfomation: MonoBehaviour
         string[] lines = temp.Split("\n"[0]);
         int j = 0;
         foreach (string line in lines){
-            for(int i = 0;i < line.Length-1;i += 22){
+            for(int i = 0;i < line.Length-1;i += 42){
                 int curr = int.Parse(line.Substring(i, 3));
                 if(i == 0)
                 {
@@ -62,7 +66,11 @@ public class GraphInfomation: MonoBehaviour
                 }
                 arrowlocations[listoflocations[j]].Add(new node(curr,new Vector3(float.Parse(line.Substring(i+4,5)),
                                                                          float.Parse(line.Substring(i+10,5)),
-                                                                         float.Parse(line.Substring(i+16,5)))));
+                                                                         float.Parse(line.Substring(i+16,5))),
+                                                                     new Vector3(float.Parse(line.Substring(i + 22, 5)),
+                                                                         float.Parse(line.Substring(i + 28, 5)),
+                                                                         float.Parse(line.Substring(i + 34, 5))),
+                                                                     int.Parse(line.Substring(i + 40, 1))));
             }
             j++;
         }
@@ -77,14 +85,16 @@ public class GraphInfomation: MonoBehaviour
             foreach (node g in arrowlocations[listoflocations[currentLoc]])
             {
                 GameObject a = (GameObject)Instantiate(listofArrowMovement[g.arrow], g.location, transform.rotation);
+                a.transform.localScale = g.scale;
+                a.tag = g.rotation.ToString();
                 int curr = int.Parse(a.name.Substring(0,3));
                 if (guidesystem.activated[curr])
                 {
-                    a.GetComponent<Renderer>().material.color = Color.blue;
+                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
                 }
                 else
                 {
-                    a.GetComponent<Renderer>().material.color = Color.red;
+                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(255f, 0f, 0f, 0.0005f));
                 }
                 currArrowMovement.Add(a);
             }

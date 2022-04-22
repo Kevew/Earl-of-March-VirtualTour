@@ -44,8 +44,9 @@ public class GuideSystem : MonoBehaviour
             edges[a[i].name] = new List<Material>();
         }
         foreach(string line in lines){
-            for(int i = 0;i < line.Length-1; i+=22)
+            for(int i = 0;i < line.Length-1; i+=42)
             {
+                Debug.Log(line.Substring(i, 3));
                 int curr = int.Parse(line.Substring(i, 3));
                 edges[a[j].name].Add(a[curr]);
             }
@@ -128,7 +129,7 @@ public class GuideSystem : MonoBehaviour
         {
             if (activated[int.Parse(obj.name.Substring(0,3))])
             {
-                obj.GetComponent<Renderer>().material.color = Color.blue;
+                obj.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
             }
         }
         currentguide = b;
