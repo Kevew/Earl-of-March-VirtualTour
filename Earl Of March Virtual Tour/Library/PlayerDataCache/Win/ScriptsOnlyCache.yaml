@@ -9,7 +9,6 @@ ScriptsOnlyBuild:
     - TouchController
     - TutorialController
     - UIController
-    - VideoPlayerScript
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
     - Unity.Cloud.Collaborate.UserInterface.WindowCache
@@ -25,10 +24,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -68,6 +65,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -91,6 +92,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11986}
     - Class: 114
+      Script: {instanceID: 12004}
+    - Class: 114
       Script: {instanceID: 12038}
     - Class: 114
       Script: {instanceID: 12040}
@@ -102,6 +105,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12416}
     - Class: 114
       Script: {instanceID: 12514}
+    - Class: 114
+      Script: {instanceID: 12546}
     - Class: 114
       Script: {instanceID: 12740}
     - Class: 114
@@ -117,6 +122,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13220}
     - Class: 114
+      Script: {instanceID: 13236}
+    - Class: 114
       Script: {instanceID: 13362}
     - Class: 114
       Script: {instanceID: 13444}
@@ -125,11 +132,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13610}
     - Class: 114
+      Script: {instanceID: 13680}
+    - Class: 114
       Script: {instanceID: 13790}
     - Class: 114
-      Script: {instanceID: 13894}
+      Script: {instanceID: 13896}
     - Class: 114
-      Script: {instanceID: 13938}
+      Script: {instanceID: 13940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,89 +156,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    Assets/VideoPlayer.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 11854}
-    - Class: 114
-      Script: {instanceID: 12004}
-    - Class: 114
-      Script: {instanceID: 12078}
-    - Class: 114
-      Script: {instanceID: 12514}
-    - Class: 114
-      Script: {instanceID: 12546}
-    - Class: 114
-      Script: {instanceID: 12972}
-    - Class: 114
-      Script: {instanceID: 13220}
-    - Class: 114
-      Script: {instanceID: 13236}
-    - Class: 114
-      Script: {instanceID: 13444}
-    - Class: 114
-      Script: {instanceID: 13510}
-    - Class: 114
-      Script: {instanceID: 13680}
-    - Class: 114
-      Script: {instanceID: 13894}
-    - Class: 114
-      Script: {instanceID: 24552}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 328
-      Script: {instanceID: 0}
-    - Class: 329
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -654,6 +580,12 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
+      Hash: 659d6ceab26f9e4237abaaf29249f293
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VideoPlayerScript
+  - hash:
+      serializedVersion: 2
       Hash: 0fd689b29ca4e350893b80d82ac126b1
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -700,15 +632,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 659d6ceab26f9e4237abaaf29249f293
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: VideoPlayerScript
   platform: 5
   scenePathNames:
-  - Assets/VideoPlayer.unity
   - Assets/MainMenu.unity
   playerPath: C:/Users/wei00/Documents/GitHub/Earl-of-March-VirtualTour/Earl Of March
-    Virtual Tour/Builds/Jan 27/Earl Of March Virtual Tour.exe
+    Virtual Tour/Builds/Feb1/Earl Of March Virtual Tour.exe

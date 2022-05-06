@@ -24,6 +24,8 @@ public class UIController : MonoBehaviour
     public float minDepth;
     public GameObject tutorial;
 
+    public GameObject tutorialMenu;
+
     public GameObject locationReached;
 
     public GameObject StartScreen;
@@ -110,12 +112,15 @@ public class UIController : MonoBehaviour
     {
         optiontext.SetActive(false);
         tutorial.SetActive(true);
+        tutorialMenu.SetActive(true);
+        
     }
     //Closes tutorial Ui and opens settings
     public void exittutorial()
     {
         optiontext.SetActive(true);
         tutorial.SetActive(false);
+        tutorialMenu.SetActive(false);
     }
 
     //Opens the option menu + little animation
