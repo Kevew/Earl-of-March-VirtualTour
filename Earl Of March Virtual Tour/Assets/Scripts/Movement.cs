@@ -45,7 +45,7 @@ public class Movement : MonoBehaviour
         //decrease field of view. It creates the zoom in effect for when you move.
         if (test){
             if(cam.GetComponent<Camera>().fieldOfView >= Mathf.Max(uicontroller.scroll.value*100,20f)-15){
-                cam.GetComponent<Camera>().fieldOfView -= Time.deltaTime*50;
+                cam.GetComponent<Camera>().fieldOfView -= Time.deltaTime*Mathf.Max(uicontroller.scrollzoom.value*100,20f);
             }
             else{
                 cam.GetComponent<Camera>().fieldOfView = uicontroller.scroll.value * 100;
@@ -56,8 +56,8 @@ public class Movement : MonoBehaviour
 
     //Performs the movement or change skybox
     IEnumerator movementTime(int id1){
-        //We wait for the zoom in effect which is approximately 0.3 seconds.
-        yield return new WaitForSeconds(0.3f);
+        //We wait for the zoom in effect depending on the zoom speed
+        yield return new WaitForSeconds(15/Mathf.Max(uicontroller.scrollzoom.value*100, 20f));
         GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
         //This line sets the location as a new place
         sphereMesh.GetComponent<Renderer>().material = graphinfo.listoflocations[id1];

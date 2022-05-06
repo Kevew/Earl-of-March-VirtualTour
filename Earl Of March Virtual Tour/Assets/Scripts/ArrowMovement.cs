@@ -7,6 +7,7 @@ public class ArrowMovement : MonoBehaviour
 {
     private MeshRenderer renderer;
     private GuideSystem guide;
+    public float transparancy = 0.001f;
     //Set all the variables such as rendere and guide so I can use them later
     void Start()
     {
@@ -20,7 +21,7 @@ public class ArrowMovement : MonoBehaviour
     private void OnMouseEnter()
     {
         //    if (IsPointerOverUIElement()){
-        renderer.material.color = new Color(0f, 255f, 0f, 0.0005f);
+        renderer.material.color = new Color(0f, 255f, 0f, 0.01f);
        // }
     }
     //The next 3 functions were my attempt to make it so that it doesn't turn green when it's over a UI element, say
@@ -57,11 +58,11 @@ public class ArrowMovement : MonoBehaviour
     {
         if (guide.activated[int.Parse(renderer.name.Substring(0,3))])
         {
-            renderer.material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
+            renderer.material.SetColor("_Color", new Color(0f, 0f, 255f, 0.01f));
         }
         else
         {
-            renderer.material.SetColor("_Color", new Color(255f, 0f, 0f, 0.0005f));
+            renderer.material.SetColor("_Color", new Color(255f, 0f, 0f, transparancy));
         }
     }
 }

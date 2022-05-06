@@ -129,7 +129,7 @@ public class GuideSystem : MonoBehaviour
         {
             if (activated[int.Parse(obj.name.Substring(0,3))])
             {
-                obj.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
+                obj.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.01f));
             }
         }
         currentguide = b;

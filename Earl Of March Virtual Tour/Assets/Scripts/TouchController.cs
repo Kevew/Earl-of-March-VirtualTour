@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using TMPro;
 
 public class TouchController : MonoBehaviour
 {
@@ -9,9 +11,34 @@ public class TouchController : MonoBehaviour
     private float pitch = 0f;
     private float yaw = 0f;
 
+    public List<KeyCode> keybinds;
+    int keypressed = -1;
+    public TextMeshProUGUI selectedChangeText;
+    public GameObject keypressUI;
+    public UIController ui;
+
     private void Start(){
         yaw = 0f;
         pitch = 0f;
+        keypressed = -1;
+    }
+    public void onKeyPress(TextMeshProUGUI _text)
+    {
+        keypressed = int.Parse(EventSystem.current.currentSelectedGameObject.name);
+        selectedChangeText = _text;
+        keypressUI.SetActive(true);
+    }
+
+    public void OnGUI()
+    {
+        Event e = Event.current;
+        if (e.isKey && keypressed != -1)
+        {
+            keybinds[keypressed - 1] = e.keyCode;
+            selectedChangeText.text = e.keyCode.ToString();
+            keypressed = -1;
+            keypressUI.SetActive(false);
+        }
     }
 
     //The two camera movement methods
@@ -39,9 +66,9 @@ public class TouchController : MonoBehaviour
             }
         }
         //Code for moving the camera by using key arrows. This moves the camera right
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(keybinds[2]))
         {
-            yaw += Speed * 0.1f;
+            yaw += Speed * (ui.scrollcamspeed.value) / 2f;
             while (yaw < 0f)
             {
                 yaw += 360f;
@@ -52,9 +79,9 @@ public class TouchController : MonoBehaviour
             }
         }
         //Code for moving the camera by using key arrows. This moves the camera left
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(keybinds[3]))
         {
-            yaw += -Speed * 0.1f;
+            yaw += -Speed * (ui.scrollcamspeed.value)/2f;
             while (yaw < 0f)
             {
                 yaw += 360f;
@@ -65,16 +92,16 @@ public class TouchController : MonoBehaviour
             }
         }
         //Code for moving the camera by using key arrows. This moves the camera up
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(keybinds[0]))
         {
-            pitch += -Speed * 0.1f;
+            pitch += -Speed * (ui.scrollcamspeed.value)/2f;
             //Mathf clamp is just a fancy way of keeping the variable in -90f and 90f.
             pitch = Mathf.Clamp(pitch, -90f, 90f);
         }
         //Code for moving the camera by using key arrows. This moves the camera down
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(keybinds[1]))
         {
-            pitch += Speed * 0.1f;
+            pitch += Speed * (ui.scrollcamspeed.value) / 2f;
             pitch = Mathf.Clamp(pitch, -90f, 90f);
         }
         //Finally with the new pitch and yaw you can set the new camera rotation.

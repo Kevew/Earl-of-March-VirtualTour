@@ -90,11 +90,11 @@ public class GraphInfomation: MonoBehaviour
                 int curr = int.Parse(a.name.Substring(0,3));
                 if (guidesystem.activated[curr])
                 {
-                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.001f));
+                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.01f));
                 }
                 else
                 {
-                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(255f, 0f, 0f, 0.0005f));
+                    a.GetComponent<Renderer>().material.SetColor("_Color", new Color(255f, 0f, 0f, 0.001f));
                 }
                 currArrowMovement.Add(a);
             }

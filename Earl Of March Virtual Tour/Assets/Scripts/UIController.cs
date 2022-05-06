@@ -14,6 +14,8 @@ public class UIController : MonoBehaviour
     int guideortele;
     GuideSystem guideSystem;
     public Scrollbar scroll;
+    public Scrollbar scrollzoom;
+    public Scrollbar scrollcamspeed;
     public Camera cam;
 
     public AudioSource source;
@@ -23,6 +25,7 @@ public class UIController : MonoBehaviour
     public GameObject optiontext;
     public float minDepth;
     public GameObject tutorial;
+    public GameObject controls;
 
     public GameObject tutorialMenu;
 
@@ -62,6 +65,14 @@ public class UIController : MonoBehaviour
     public void disableTeacherinfo()
     {
         teacherinfo.SetActive(false);
+    }
+
+    public void openControls()
+    {
+        controls.SetActive(true);
+        tutorial.SetActive(false);
+        optiontext.SetActive(false);
+        tutorialMenu.SetActive(false);
     }
 
     //Opens up the guidesystem UI
@@ -116,11 +127,12 @@ public class UIController : MonoBehaviour
         
     }
     //Closes tutorial Ui and opens settings
-    public void exittutorial()
+    public void enterSettings()
     {
         optiontext.SetActive(true);
         tutorial.SetActive(false);
         tutorialMenu.SetActive(false);
+        controls.SetActive(false);
     }
 
     //Opens the option menu + little animation
@@ -131,6 +143,7 @@ public class UIController : MonoBehaviour
             options.SetActive(false);
             return;
         }
+        controls.SetActive(false);
         //Disables the welcome to Earl screen so that it doesn't collide with the settings UI
         if (StartScreen.activeSelf)
         {
@@ -151,6 +164,7 @@ public class UIController : MonoBehaviour
     IEnumerator removeoptionsmenu()
     {
         Animator temp = options.GetComponent<Animator>();
+        controls.SetActive(false);
         optiontext.SetActive(false);
         temp.SetBool("OptionOpen", false);
         yield return new WaitForSeconds(0.5f);
