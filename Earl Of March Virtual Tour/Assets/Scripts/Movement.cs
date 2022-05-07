@@ -44,11 +44,14 @@ public class Movement : MonoBehaviour
         //One of the variables is the "test", basically when it's acitvated it will sent zoom in the camera or 
         //decrease field of view. It creates the zoom in effect for when you move.
         if (test){
-            if(cam.GetComponent<Camera>().fieldOfView >= Mathf.Max(uicontroller.scroll.value*100,20f)-15){
+            float scrollvalue = uicontroller.scroll.value;
+            float zoomdepth = Mathf.Max(uicontroller.scrollcamdepth.value*50,15f);
+            if(cam.GetComponent<Camera>().fieldOfView >= Mathf.Max(scrollvalue * 100,20f) - zoomdepth)
+            {
                 cam.GetComponent<Camera>().fieldOfView -= Time.deltaTime*Mathf.Max(uicontroller.scrollzoom.value*100,20f);
             }
             else{
-                cam.GetComponent<Camera>().fieldOfView = uicontroller.scroll.value * 100;
+                cam.GetComponent<Camera>().fieldOfView = scrollvalue * 100;
                 test = false;
             }
         }
@@ -57,7 +60,8 @@ public class Movement : MonoBehaviour
     //Performs the movement or change skybox
     IEnumerator movementTime(int id1){
         //We wait for the zoom in effect depending on the zoom speed
-        yield return new WaitForSeconds(15/Mathf.Max(uicontroller.scrollzoom.value*100, 20f));
+        float zoomdepth = Mathf.Max(uicontroller.scrollcamdepth.value * 50, 15f);
+        yield return new WaitForSeconds(zoomdepth / Mathf.Max(uicontroller.scrollzoom.value*100, 20f));
         GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
         //This line sets the location as a new place
         sphereMesh.GetComponent<Renderer>().material = graphinfo.listoflocations[id1];

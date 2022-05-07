@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     public Scrollbar scroll;
     public Scrollbar scrollzoom;
     public Scrollbar scrollcamspeed;
+    public Scrollbar scrollcamdepth;
     public Camera cam;
 
     public AudioSource source;
