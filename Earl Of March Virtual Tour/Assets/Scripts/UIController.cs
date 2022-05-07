@@ -124,7 +124,7 @@ public class UIController : MonoBehaviour
         optiontext.SetActive(false);
         tutorial.SetActive(true);
         tutorialMenu.SetActive(true);
-        
+        controls.SetActive(false);
     }
     //Closes tutorial Ui and opens settings
     public void enterSettings()
