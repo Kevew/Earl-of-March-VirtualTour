@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
                 if(hitInfo.collider.gameObject != null){
                     int id1 = int.Parse(hitInfo.collider.name.Substring(0,3));
                     GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
-                    if (!test)
+                    if (!test && !uicontroller.options.activeSelf)
                     {
                         StartCoroutine(movementTime(id1));
                     }

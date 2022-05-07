@@ -165,7 +165,9 @@ public class UIController : MonoBehaviour
     {
         Animator temp = options.GetComponent<Animator>();
         controls.SetActive(false);
+        tutorial.SetActive(false);
         optiontext.SetActive(false);
+        tutorialMenu.SetActive(false);
         temp.SetBool("OptionOpen", false);
         yield return new WaitForSeconds(0.5f);
         options.SetActive(false);
