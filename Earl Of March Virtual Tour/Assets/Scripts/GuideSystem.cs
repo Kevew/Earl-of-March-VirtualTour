@@ -46,7 +46,6 @@ public class GuideSystem : MonoBehaviour
         foreach(string line in lines){
             for(int i = 0;i < line.Length-1; i+=42)
             {
-                Debug.Log(line.Substring(i, 3));
                 int curr = int.Parse(line.Substring(i, 3));
                 edges[a[j].name].Add(a[curr]);
             }

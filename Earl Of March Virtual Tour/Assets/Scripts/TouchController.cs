@@ -17,6 +17,10 @@ public class TouchController : MonoBehaviour
     public GameObject keypressUI;
     public UIController ui;
 
+    public Scrollbar scrollfirstcameraspeed;
+
+    public Toggle firstperson;
+
     private void Start(){
         yaw = 0f;
         pitch = 0f;
@@ -40,11 +44,31 @@ public class TouchController : MonoBehaviour
             keypressUI.SetActive(false);
         }
     }
-
     //The two camera movement methods
     private void Update(){
+        if (Input.GetKeyDown(KeyCode.Escape) && firstperson.isOn)
+        {
+            if(Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = true;
+            }
+        }
+        if(Cursor.lockState == CursorLockMode.Locked)
+        {
+            float x = Input.GetAxis("Mouse X") * Mathf.Max(scrollfirstcameraspeed.value*100f,20f) * Time.deltaTime;
+            float y = Input.GetAxis("Mouse Y") * Mathf.Max(scrollfirstcameraspeed.value*100f, 20f) * Time.deltaTime;
+            yaw += x;
+            pitch -= y;
+            pitch = Mathf.Clamp(pitch, -90f, 90f);
+        }
         //This code basically moves the camera based on the mouse being held down.
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !firstperson.isOn)
         {
             if (!IsPointerOverUIElement())
             {

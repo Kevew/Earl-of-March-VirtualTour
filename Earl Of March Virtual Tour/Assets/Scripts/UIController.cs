@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using TMPro;
 
 
 //Basically controlls almost all of the UI elements.
@@ -18,6 +19,8 @@ public class UIController : MonoBehaviour
     public Scrollbar scrollcamspeed;
     public Scrollbar scrollcamdepth;
     public Camera cam;
+
+    public TouchController touch;
 
     public AudioSource source;
     public Scrollbar audioscroll;
@@ -46,6 +49,8 @@ public class UIController : MonoBehaviour
     public GameObject teacherinfo;
     public GameObject closeTeacherinfo;
 
+    public TextMeshProUGUI toprightcorner;
+
     public Dictionary<string, int> info = new Dictionary<string, int>();
     public Dictionary<int, string> seinfo = new Dictionary<int, string>();
 
@@ -66,6 +71,12 @@ public class UIController : MonoBehaviour
     public void disableTeacherinfo()
     {
         teacherinfo.SetActive(false);
+    }
+
+    //Changes the top right corner UI
+    public void checkTopRight(string _change)
+    {
+        toprightcorner.text = _change;
     }
 
     public void openControls()
@@ -139,6 +150,8 @@ public class UIController : MonoBehaviour
     //Opens the option menu + little animation
     public void openOptions()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (tutorial.activeSelf){
             tutorial.SetActive(false);
             options.SetActive(false);
@@ -171,6 +184,11 @@ public class UIController : MonoBehaviour
         tutorialMenu.SetActive(false);
         temp.SetBool("OptionOpen", false);
         yield return new WaitForSeconds(0.5f);
+        if (touch.firstperson.isOn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         options.SetActive(false);
     }
     

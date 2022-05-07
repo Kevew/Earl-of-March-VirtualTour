@@ -32,9 +32,13 @@ public class GraphInfomation: MonoBehaviour
 
     public List<GameObject> currArrowMovement;
 
+    private UIController uicontroller;
+
     //The Material means the scene and each one has a list of nodes, which is all the prefab movement objects in
     //that specific scene.
     public Dictionary<Material, List<node>> arrowlocations = new Dictionary<Material, List<node>>();
+
+    public Dictionary<int, string> toprighttext = new Dictionary<int, string>();
     GuideSystem guidesystem;
 
     //Sets up the variables as the scripts are not yet connected with the variables.
@@ -43,10 +47,27 @@ public class GraphInfomation: MonoBehaviour
     private void Awake()
     {
         guidesystem = GetComponent<GuideSystem>();
+        uicontroller = GetComponent<UIController>();
         currentLoc = 0;
         readgraphInfo();
+        readtopRight();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
         Debug.Log(currentLoc);
+    }
+
+    void readtopRight()
+    {
+        Object path = Resources.Load("TopRight");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
+        string[] lines = temp.Split("\n"[0]);
+        int i = 0;
+        foreach (string line in lines){
+            string curr = line.Substring(4, line.Length-4);
+            toprighttext[i] = curr;
+            Debug.Log(curr);
+            i++;
+        }
     }
 
     //This one sets all the locations for the prefabs movement objects.
@@ -80,6 +101,7 @@ public class GraphInfomation: MonoBehaviour
     //This is goes through all the arrow movements in the scene and instantiates them
     public void LoadNewMovements()
     {
+        uicontroller.checkTopRight(toprighttext[currentLoc]);
         if(arrowlocations[listoflocations[currentLoc]].Count > 0)
         {
             foreach (node g in arrowlocations[listoflocations[currentLoc]])
