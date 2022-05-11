@@ -52,7 +52,6 @@ public class GraphInfomation: MonoBehaviour
         readgraphInfo();
         readtopRight();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
-        Debug.Log(currentLoc);
     }
 
     void readtopRight()
@@ -65,7 +64,6 @@ public class GraphInfomation: MonoBehaviour
         foreach (string line in lines){
             string curr = line.Substring(4, line.Length-4);
             toprighttext[i] = curr;
-            Debug.Log(curr);
             i++;
         }
     }

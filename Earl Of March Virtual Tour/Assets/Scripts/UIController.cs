@@ -46,7 +46,6 @@ public class UIController : MonoBehaviour
     public GameObject enableGuideSystemUIbutton;
 
     //Teacher UI Info
-    public GameObject teacherinfo;
     public GameObject closeTeacherinfo;
 
     public TextMeshProUGUI toprightcorner;
@@ -60,17 +59,6 @@ public class UIController : MonoBehaviour
         guideortele = 1;
         setup();
         guideSystem = GetComponent<GuideSystem>();
-    }
-
-    //Enable the Teacher Info UI
-    public void openTeacherinfo()
-    {
-        teacherinfo.SetActive(true);
-    }
-    //Disable the Teacher Info UI
-    public void disableTeacherinfo()
-    {
-        teacherinfo.SetActive(false);
     }
 
     //Changes the top right corner UI

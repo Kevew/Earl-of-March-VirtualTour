@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\VideoPlayerScript.cs" />
     <Compile Include="Assets\Scripts\ObjectPlacement.cs" />
     <Compile Include="Assets\Scripts\TouchController.cs" />
+    <Compile Include="Assets\Scripts\UiControllerTeacherInfo.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -85,6 +86,7 @@
      <None Include="Assets\Resources\GraphInfo.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Resources\TeacherInformation.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
