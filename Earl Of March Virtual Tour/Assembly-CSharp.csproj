@@ -59,14 +59,16 @@
     <Compile Include="Assets\Scripts\CompassDirection.cs" />
     <Compile Include="Assets\Scripts\ArrowMovement.cs" />
     <Compile Include="Assets\Scripts\GuideSystem.cs" />
+    <Compile Include="Assets\Scripts\UiControllerTeacherInfo.cs" />
+    <Compile Include="Assets\Scripts\UIFadeInOut.cs" />
     <Compile Include="Assets\Scripts\ClickableInformation.cs" />
     <Compile Include="Assets\Scripts\GraphInfomation.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\FaceTowardsCamera.cs" />
     <Compile Include="Assets\Scripts\VideoPlayerScript.cs" />
     <Compile Include="Assets\Scripts\ObjectPlacement.cs" />
     <Compile Include="Assets\Scripts\TouchController.cs" />
-    <Compile Include="Assets\Scripts\UiControllerTeacherInfo.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -76,6 +78,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <None Include="Assets\Fonts\LICENSE.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Resources\InformationBanner.txt" />
      <None Include="Assets\Resources\GuideChangeInformation.txt" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

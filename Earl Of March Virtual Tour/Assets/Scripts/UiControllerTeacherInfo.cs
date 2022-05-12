@@ -17,6 +17,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
     public GameObject topbar2;
     public GameObject topbar3;
 
+    public TMP_InputField input;
+    
     public class teacher
     {
         public string name;
@@ -220,4 +222,95 @@ public class UiControllerTeacherInfo : MonoBehaviour
         }
     }
 
+
+
+    public void searchTeach()
+    {
+        resetList();
+        string curr = input.text;
+        int i = 0;
+        if (topbar3.activeSelf || topbar1.activeSelf)
+        {
+            foreach (teacher a in secondary)
+            {
+                string used = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
+                if (!used.Contains(curr)){
+                    continue;
+                }
+                if (i == 0)
+                {
+                    GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                else
+                {
+                    GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                i = 1 - i;
+            }
+        }
+        if (topbar2.activeSelf || topbar1.activeSelf)
+        {
+            foreach (teacher a in intermediate)
+            {
+                string used = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
+                if (!used.Contains(curr))
+                {
+                    continue;
+                }
+                if (i == 0)
+                {
+                    GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                else
+                {
+                    GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                i = 1 - i;
+            }
+        }
+        if (topbar1.activeSelf)
+        {
+            foreach (teacher a in others)
+            {
+                string used = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
+                if (!used.Contains(curr))
+                {
+                    continue;
+                }
+                if (i == 0)
+                {
+                    GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                else
+                {
+                    GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
+                    b.transform.SetParent(content);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
+                    b.SetActive(true);
+                    current.Add(b);
+                }
+                i = 1 - i;
+            }
+        }
+    }
 }

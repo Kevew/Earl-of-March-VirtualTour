@@ -17,7 +17,7 @@ public class ObjectPlacement : MonoBehaviour
     {
         RaycastHit hit;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.layer == 8)
         {
             if (!follow.activeSelf)
             {

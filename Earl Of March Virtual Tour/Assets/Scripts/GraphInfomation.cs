@@ -41,6 +41,8 @@ public class GraphInfomation: MonoBehaviour
     public Dictionary<int, string> toprighttext = new Dictionary<int, string>();
     GuideSystem guidesystem;
 
+    public ClickableInformation click;
+
     //Sets up the variables as the scripts are not yet connected with the variables.
     //You may notice that I use awake here instead of Start. Awake goes first before Start.
     //Basically I need to setup all the variables as a lot of other scripts relay on this one.
@@ -48,7 +50,8 @@ public class GraphInfomation: MonoBehaviour
     {
         guidesystem = GetComponent<GuideSystem>();
         uicontroller = GetComponent<UIController>();
-        currentLoc = 0;
+        click = GetComponent<ClickableInformation>();
+        currentLoc = 60;
         readgraphInfo();
         readtopRight();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
@@ -119,6 +122,7 @@ public class GraphInfomation: MonoBehaviour
                 currArrowMovement.Add(a);
             }
         }
+        click.LoadNewMovements(currentLoc);
     }
 
     //This destroys every object currently in the scene. As when you move into the new scene, you 

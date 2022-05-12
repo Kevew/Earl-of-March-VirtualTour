@@ -254,10 +254,4 @@ public class UIController : MonoBehaviour
             input.text = "Error:Incorrect input";
         }
     }
-
-    //If you click exitapplication it will exit you out of the application. Wow
-    public void exitApplication()
-    {
-        Application.Quit();
-    }
 }

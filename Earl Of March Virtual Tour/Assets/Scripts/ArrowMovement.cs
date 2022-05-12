@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ArrowMovement : MonoBehaviour
 {
@@ -23,33 +22,6 @@ public class ArrowMovement : MonoBehaviour
         //    if (IsPointerOverUIElement()){
         renderer.material.color = new Color(0f, 255f, 0f, 0.01f);
        // }
-    }
-    //The next 3 functions were my attempt to make it so that it doesn't turn green when it's over a UI element, say
-    //the settings. Unfortunately, it caused other bugs so, I don't use this section. That's why if you look 
-    //at void OnMouseEnter() I commented out the if function.
-    public static bool IsPointerOverUIElement()
-    {
-        return IsPointerOverUIElement(GetEventSystemRaycastResults());
-    }
-    public static bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
-    {
-        for (int i = 0; i < eventSystemRaysastResults.Count; i++)
-        {
-            RaycastResult curRaysastResult = eventSystemRaysastResults[i];
-            if (curRaysastResult.gameObject.layer == LayerMask.NameToLayer("UI"))
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    static List<RaycastResult> GetEventSystemRaycastResults()
-    {
-        PointerEventData eventData = new PointerEventData(EventSystem.current);
-        eventData.position = Input.mousePosition;
-        List<RaycastResult> raysastResults = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, raysastResults);
-        return raysastResults;
     }
 
     //This is basically to set the color of the prefab when the mouse is not over the prefab

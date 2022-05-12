@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
@@ -27,9 +28,9 @@ public class Movement : MonoBehaviour
         //This section checks whenever a button is clicked. In doing so, it shoots out a ray and checks if it hits
         //The prefab for movement. From there, we get the information about the prefab and sent it to the function
         //that will perform the movement.
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonUp(0)){
             Ray ray = cam.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out RaycastHit hitInfo)){
+            if(Physics.Raycast(ray, out RaycastHit hitInfo) && !IsPointerOverUIElement()){
                 if(hitInfo.collider.gameObject != null){
                     int id1 = int.Parse(hitInfo.collider.name.Substring(0,3));
                     GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
@@ -96,5 +97,31 @@ public class Movement : MonoBehaviour
         }
         //Adds the new scene prefabs
         graphinfo.LoadNewMovements();
+    }
+
+    //Check if mouse over UI
+    public static bool IsPointerOverUIElement()
+    {
+        return IsPointerOverUIElement(GetEventSystemRaycastResults());
+    }
+    public static bool IsPointerOverUIElement(List<RaycastResult> eventSystemRaysastResults)
+    {
+        for (int i = 0; i < eventSystemRaysastResults.Count; i++)
+        {
+            RaycastResult curRaysastResult = eventSystemRaysastResults[i];
+            if (curRaysastResult.gameObject.layer == LayerMask.NameToLayer("UI"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    static List<RaycastResult> GetEventSystemRaycastResults()
+    {
+        PointerEventData eventData = new PointerEventData(EventSystem.current);
+        eventData.position = Input.mousePosition;
+        List<RaycastResult> raysastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, raysastResults);
+        return raysastResults;
     }
 }
