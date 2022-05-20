@@ -95,3 +95,11 @@
 094 Room-176
 095 Room-179
 096 Room-181
+097 Room-258
+098 Co-op
+099 Upper-Hall
+100 Lower-Hall
+101 Upper-Hall
+102 Upper-Hall
+103 Upper-Hall
+104 Outside

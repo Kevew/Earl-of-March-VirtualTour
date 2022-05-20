@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class GraphInfomation: MonoBehaviour
 {
@@ -23,6 +24,25 @@ public class GraphInfomation: MonoBehaviour
             rotation = d;
         }
     }
+
+    private Dictionary<int, List<clicknode>> listofPops = new Dictionary<int, List<clicknode>>();
+    List<GameObject> currPopups = new List<GameObject>();
+    public GameObject popupGO;
+    public class clicknode
+    {
+        public Vector3 location;
+        public Vector3 scale;
+        public string title;
+        public string info;
+        public clicknode(Vector3 _location, Vector3 _scale, string _title, string _info)
+        {
+            location = _location;
+            scale = _scale;
+            title = _title;
+            info = _info;
+        }
+    }
+
 
     public GameObject sphereMesh;
 
@@ -53,9 +73,52 @@ public class GraphInfomation: MonoBehaviour
         click = GetComponent<ClickableInformation>();
         currentLoc = 60;
         readgraphInfo();
+        setup();
         readtopRight();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
     }
+
+    //Using InformationBanner.txt, the code gets all the values for where each location should have popups
+    private void setup()
+    {
+        Object path = Resources.Load("InformationBanner");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
+        string[] lines = temp.Split("\n"[0]);
+        int i = 0;
+        int place = 0;
+        //Vector3.up is placeholder
+        Vector3 location = Vector3.up, scale = Vector3.up;
+        string titletext = "";
+        for(int j = 0;j <= 200; j++)
+        {
+            listofPops[j] = new List<clicknode>();
+        }
+        foreach (string line in lines)
+        {
+            if (i % 3 == 0)
+            {
+                place = int.Parse(line.Substring(0, 3));
+                location = new Vector3(float.Parse(line.Substring(4, 5)),
+                                       float.Parse(line.Substring(10, 5)),
+                                       float.Parse(line.Substring(16, 5)));
+                scale = new Vector3(float.Parse(line.Substring(22, 5)),
+                                       float.Parse(line.Substring(28, 5)),
+                                       float.Parse(line.Substring(34, 5)));
+
+            }
+            else if (i % 2 == 1)
+            {
+                titletext = line;
+            }
+            else
+            {
+                listofPops[place].Add(new clicknode(location, scale, titletext, line));
+            }
+            i++;
+        }
+    }
+
 
     void readtopRight()
     {
@@ -122,7 +185,6 @@ public class GraphInfomation: MonoBehaviour
                 currArrowMovement.Add(a);
             }
         }
-        click.LoadNewMovements(currentLoc);
     }
 
     //This destroys every object currently in the scene. As when you move into the new scene, you 
@@ -132,5 +194,27 @@ public class GraphInfomation: MonoBehaviour
             Destroy(g);
         }
         currArrowMovement = new List<GameObject>();
+    }
+
+    //SameAsAbove but for clickpopups
+    public void LoadNewMovementsClick()
+    {
+        if (listofPops[currentLoc].Count > 0)
+        {
+            foreach (clicknode g in listofPops[currentLoc])
+            {
+                GameObject a = (GameObject)Instantiate(popupGO, g.location, transform.rotation);
+                a.transform.localScale = g.scale;
+                currPopups.Add(a);
+            }
+        }
+    }
+    public void deleteCurrentMovementsClick()
+    {
+        foreach (GameObject g in currPopups)
+        {
+            Destroy(g);
+        }
+        currPopups = new List<GameObject>();
     }
 }

@@ -16,14 +16,38 @@ public class Movement : MonoBehaviour
 
     public GameObject sphereMesh;
 
+    public class Direction
+    {
+        public float x;
+        public float z;
+        public Direction(float _z, float _x)
+        {
+            x = _x;
+            z = _z;
+        }
+    }
+
+    List<Direction> dirc = new List<Direction>();
+
     //Get variables
     void Awake()
     {
         guidesystem = GetComponent<GuideSystem>();
         uicontroller = GetComponent<UIController>();
+        dirc.Add(new Direction(1, 0));
+        dirc.Add(new Direction(1, 1));
+        dirc.Add(new Direction(0, 1));
+        dirc.Add(new Direction(-1, 1));
+        dirc.Add(new Direction(-1, 0));
+        dirc.Add(new Direction(-1, -1));
+        dirc.Add(new Direction(0, -1));
+        dirc.Add(new Direction(1, -1));
     }
 
     //Check's for when movement begins + animation zoom in
+    private int camDirMovement = 0;
+    private float timeAnim;
+    private float currentTimeAnim;
     void Update(){
         //This section checks whenever a button is clicked. In doing so, it shoots out a ray and checks if it hits
         //The prefab for movement. From there, we get the information about the prefab and sent it to the function
@@ -33,7 +57,11 @@ public class Movement : MonoBehaviour
             if(Physics.Raycast(ray, out RaycastHit hitInfo) && !IsPointerOverUIElement()){
                 if(hitInfo.collider.gameObject != null){
                     int id1 = int.Parse(hitInfo.collider.name.Substring(0,3));
+                    camDirMovement = int.Parse(hitInfo.transform.tag);
+                    timeAnim = Mathf.Max(uicontroller.scrollcamdepth.value * 50, 15f)/Mathf.Max(uicontroller.scrollzoom.value * 100, 20f);
+                    currentTimeAnim = 0f;
                     GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
+                    Destroy(hitInfo.collider.gameObject);
                     if (!test && !uicontroller.options.activeSelf)
                     {
                         StartCoroutine(movementTime(id1));
@@ -45,15 +73,33 @@ public class Movement : MonoBehaviour
         //One of the variables is the "test", basically when it's acitvated it will sent zoom in the camera or 
         //decrease field of view. It creates the zoom in effect for when you move.
         if (test){
-            float scrollvalue = uicontroller.scroll.value;
-            float zoomdepth = Mathf.Max(uicontroller.scrollcamdepth.value*50,15f);
-            if(cam.GetComponent<Camera>().fieldOfView >= Mathf.Max(scrollvalue * 100,20f) - zoomdepth)
+            if (uicontroller.zoomInEnable.isOn)
             {
-                cam.GetComponent<Camera>().fieldOfView -= Time.deltaTime*Mathf.Max(uicontroller.scrollzoom.value*100,20f);
+                float scrollvalue = uicontroller.scroll.value;
+                float zoomdepth = Mathf.Max(uicontroller.scrollcamdepth.value * 50, 15f);
+                if (cam.GetComponent<Camera>().fieldOfView >= Mathf.Max(scrollvalue * 100, 20f) - zoomdepth)
+                {
+                    cam.GetComponent<Camera>().fieldOfView -= Time.deltaTime * Mathf.Max(uicontroller.scrollzoom.value * 100, 20f);
+                }
+                else
+                {
+                    cam.GetComponent<Camera>().fieldOfView = scrollvalue * 100;
+                    test = false;
+                    cam.transform.position = new Vector3(50f, 50f, 50f);
+                }
             }
-            else{
-                cam.GetComponent<Camera>().fieldOfView = scrollvalue * 100;
-                test = false;
+            else
+            {
+                if(currentTimeAnim <= timeAnim)
+                {
+                    currentTimeAnim += Time.deltaTime;
+                    cam.transform.position = cam.transform.position + new Vector3(dirc[camDirMovement].x, 0f, dirc[camDirMovement].z) / (uicontroller.scrollzoom.value * 50);
+                }
+                else
+                {
+                    cam.transform.position = new Vector3(50f, 50f, 50f);
+                    test = false;
+                }
             }
         }
     }
@@ -61,8 +107,7 @@ public class Movement : MonoBehaviour
     //Performs the movement or change skybox
     IEnumerator movementTime(int id1){
         //We wait for the zoom in effect depending on the zoom speed
-        float zoomdepth = Mathf.Max(uicontroller.scrollcamdepth.value * 50, 15f);
-        yield return new WaitForSeconds(zoomdepth / Mathf.Max(uicontroller.scrollzoom.value*100, 20f));
+        yield return new WaitForSeconds(timeAnim);
         GraphInfomation graphinfo = this.gameObject.GetComponent<GraphInfomation>();
         //This line sets the location as a new place
         sphereMesh.GetComponent<Renderer>().material = graphinfo.listoflocations[id1];
@@ -79,6 +124,7 @@ public class Movement : MonoBehaviour
         graphinfo.currentLoc = id1;
         //Deletes the current scene prefabs
         graphinfo.deleteCurrentMovements();
+        graphinfo.deleteCurrentMovementsClick();
         //You want to keep checking if we are on the path if it exists. If it exists and we just enter a new scene
         //that is on the graph, we set the path we just went on to false, so it will no longer display a blue prefab
         //If the path is activated but we did not go on a blue prefab, we have to recalculate the path as we went off
@@ -97,6 +143,7 @@ public class Movement : MonoBehaviour
         }
         //Adds the new scene prefabs
         graphinfo.LoadNewMovements();
+        graphinfo.LoadNewMovementsClick();
     }
 
     //Check if mouse over UI

@@ -105,7 +105,7 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if (i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
+                GameObject b = (GameObject)Instantiate(option1, option1.transform.position, option1.transform.rotation);
                 b.transform.SetParent(content);
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);

@@ -20,6 +20,8 @@ public class UIController : MonoBehaviour
     public Scrollbar scrollcamdepth;
     public Camera cam;
 
+    public Toggle zoomInEnable;
+
     public TouchController touch;
 
     public AudioSource source;

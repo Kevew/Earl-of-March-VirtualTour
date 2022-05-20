@@ -29,6 +29,7 @@ public class GuideSystem : MonoBehaviour
         InitializeDict();
         //Sets all prefabs in the current location
         graphinformation.LoadNewMovements();
+        graphinformation.LoadNewMovementsClick();
     }
 
 
@@ -145,8 +146,10 @@ public class GuideSystem : MonoBehaviour
         }
         currentguide = null;
         graphinformation.deleteCurrentMovements();
+        graphinformation.deleteCurrentMovementsClick();
         sphereMesh.GetComponent<Renderer>().material = setnew;
         graphinformation.currentLoc = int.Parse(setnew.name.Substring(0, 3));
         graphinformation.LoadNewMovements();
+        graphinformation.LoadNewMovementsClick();
     }
 }
