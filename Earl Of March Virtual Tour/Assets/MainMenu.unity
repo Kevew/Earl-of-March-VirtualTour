@@ -3470,6 +3470,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 330350129}
+  - component: {fileID: 330350130}
   m_Layer: 5
   m_Name: TeacherInfo
   m_TagString: Untagged
@@ -3497,11 +3498,30 @@ RectTransform:
   m_Father: {fileID: 1175687771}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -400, y: 0}
+  m_SizeDelta: {x: 800, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &330350130
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330350128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6eb64fae7e3051046b17befa8e0e9d34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &342364339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5961,7 +5981,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -359.36234}
+  m_SizeDelta: {x: 0, y: -359.55768}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &597914161
 MonoBehaviour:
@@ -9425,8 +9445,8 @@ RectTransform:
   m_Father: {fileID: 1487059256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.2, y: 1}
+  m_AnchorMin: {x: 0.41599998, y: 0}
+  m_AnchorMax: {x: 0.616, y: 1}
   m_AnchoredPosition: {x: -25, y: 0}
   m_SizeDelta: {x: -30, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10512,7 +10532,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2085189185}
   m_HandleRect: {fileID: 2085189184}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13508,6 +13528,7 @@ MonoBehaviour:
   topbar2: {fileID: 1102564065}
   topbar3: {fileID: 1563123284}
   input: {fileID: 405652714}
+  touch: {fileID: 1747842842}
 --- !u!114 &1307694178
 MonoBehaviour:
   m_ObjectHideFlags: 0

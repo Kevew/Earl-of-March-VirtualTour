@@ -18,7 +18,9 @@ public class UiControllerTeacherInfo : MonoBehaviour
     public GameObject topbar3;
 
     public TMP_InputField input;
-    
+
+    public TouchController touch;
+
     public class teacher
     {
         public string name;
@@ -36,8 +38,7 @@ public class UiControllerTeacherInfo : MonoBehaviour
     private List<teacher> intermediate = new List<teacher>();
     private List<teacher> others = new List<teacher>();
 
-    private List<GameObject> current = new List<GameObject>(); 
-
+    private List<GameObject> current = new List<GameObject>();
     public void copyToClip()
     {
         GUIUtility.systemCopyBuffer = EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
@@ -95,15 +96,30 @@ public class UiControllerTeacherInfo : MonoBehaviour
     }
     public void openTeacherInfo()
     {
+        Animator temp = teacherInfo.GetComponent<Animator>();
         teacherInfo.SetActive(true);
+        temp.SetBool("OpenTeacher", true);
         showallstaff();
     }
 
     public void closeTeacherInfo()
     {
-        teacherInfo.SetActive(false);
+        resetList();
+        StartCoroutine(removeTeacherMenu());
     }
 
+    IEnumerator removeTeacherMenu()
+    {
+        Animator temp = teacherInfo.GetComponent<Animator>();
+        temp.SetBool("OpenTeacher", false);
+        yield return new WaitForSeconds(1f);
+        if (touch.firstperson.isOn)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        teacherInfo.SetActive(false);
+    }
     private void resetList()
     {
         foreach (GameObject a in current)

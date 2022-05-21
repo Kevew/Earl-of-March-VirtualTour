@@ -47,8 +47,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -117,49 +119,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 11892}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 11916}
+      Script: {instanceID: 11894}
     - Class: 114
-      Script: {instanceID: 12002}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 12004}
     - Class: 114
-      Script: {instanceID: 12062}
+      Script: {instanceID: 12052}
     - Class: 114
-      Script: {instanceID: 12084}
+      Script: {instanceID: 12064}
     - Class: 114
-      Script: {instanceID: 12122}
+      Script: {instanceID: 12086}
     - Class: 114
       Script: {instanceID: 12124}
     - Class: 114
-      Script: {instanceID: 12162}
+      Script: {instanceID: 12126}
     - Class: 114
-      Script: {instanceID: 12192}
+      Script: {instanceID: 12164}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12302}
+      Script: {instanceID: 12292}
     - Class: 114
-      Script: {instanceID: 12318}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 12394}
+      Script: {instanceID: 12320}
     - Class: 114
-      Script: {instanceID: 12422}
+      Script: {instanceID: 12396}
     - Class: 114
-      Script: {instanceID: 12534}
+      Script: {instanceID: 12424}
     - Class: 114
-      Script: {instanceID: 12568}
+      Script: {instanceID: 12536}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12888}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12974}
+      Script: {instanceID: 12890}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 12976}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 12992}
     - Class: 114
       Script: {instanceID: 13172}
     - Class: 114
@@ -240,15 +242,15 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11890}
     - Class: 114
-      Script: {instanceID: 11916}
+      Script: {instanceID: 11918}
     - Class: 114
-      Script: {instanceID: 12162}
+      Script: {instanceID: 12164}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12674}
+      Script: {instanceID: 12676}
     - Class: 114
       Script: {instanceID: 13410}
     - Class: 114
@@ -278,6 +280,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -526,7 +534,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 6ca168669f8e05ca309626306506b91e
+      Hash: 3138ca0b37627b81d4433d63abd5cb58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UiControllerTeacherInfo
@@ -626,12 +634,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
