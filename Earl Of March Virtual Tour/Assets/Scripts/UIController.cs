@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public Text changer;
     int guideortele;
     GuideSystem guideSystem;
+    public Scrollbar motionscroll;
     public Scrollbar scroll;
     public Scrollbar scrollzoom;
     public Scrollbar scrollcamspeed;

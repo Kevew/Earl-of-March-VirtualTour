@@ -61,20 +61,6 @@ MonoBehaviour:
     - Assets/Animations/SkipButton/Idle2.anim.meta
     - Assets/Animations/SkipButton/Text (TMP).controller
     - Assets/Animations/SkipButton/Text (TMP).controller.meta
-    - Assets/CloseIcon.png
-    - Assets/CloseIcon.png.meta
-    - Assets/Compass.png
-    - Assets/Compass.png.meta
-    - Assets/Compass2.png
-    - Assets/Compass2.png.meta
-    - Assets/EOM_Logo.png
-    - Assets/EOM_Logo.png.meta
-    - Assets/Earl of March Yearbook 2016_2017.mp4
-    - Assets/Earl of March Yearbook 2016_2017.mp4.meta
-    - Assets/FaceTowardsCamera.cs
-    - Assets/FaceTowardsCamera.cs.meta
-    - Assets/Follow.mat
-    - Assets/Follow.mat.meta
     - Assets/Fonts.meta
     - Assets/Fonts/LICENSE.txt
     - Assets/Fonts/LICENSE.txt.meta
@@ -102,6 +88,23 @@ MonoBehaviour:
     - Assets/Fonts/Roboto-Thin.ttf.meta
     - Assets/Fonts/Roboto-ThinItalic.ttf
     - Assets/Fonts/Roboto-ThinItalic.ttf.meta
+    - Assets/ImageSprites.meta
+    - Assets/ImageSprites/CloseIcon.png
+    - Assets/ImageSprites/CloseIcon.png.meta
+    - Assets/ImageSprites/Compass.png
+    - Assets/ImageSprites/Compass.png.meta
+    - Assets/ImageSprites/Compass2.png
+    - Assets/ImageSprites/Compass2.png.meta
+    - Assets/ImageSprites/EOM_Logo.png
+    - Assets/ImageSprites/EOM_Logo.png.meta
+    - Assets/ImageSprites/QuestionMarl.png
+    - Assets/ImageSprites/QuestionMarl.png.meta
+    - Assets/ImageSprites/Test.PNG
+    - Assets/ImageSprites/Test.PNG.meta
+    - Assets/ImageSprites/Untitled.png
+    - Assets/ImageSprites/Untitled.png.meta
+    - Assets/ImageSprites/search-icon-png-9985.png
+    - Assets/ImageSprites/search-icon-png-9985.png.meta
     - Assets/Images.meta
     - Assets/Images/000.jpeg
     - Assets/Images/000.jpeg.meta
@@ -309,223 +312,30 @@ MonoBehaviour:
     - Assets/Images/101.jpg.meta
     - Assets/Images/102.jpg
     - Assets/Images/102.jpg.meta
+    - Assets/Images/103.jpg
+    - Assets/Images/103.jpg.meta
     - Assets/Images/104.jpg
     - Assets/Images/104.jpg.meta
     - Assets/MainMenu.unity
     - Assets/MainMenu.unity.meta
-    - Assets/MovementArrows.meta
-    - Assets/MovementArrows/000.prefab
-    - Assets/MovementArrows/000.prefab.meta
-    - Assets/MovementArrows/001.prefab
-    - Assets/MovementArrows/001.prefab.meta
-    - Assets/MovementArrows/002.prefab
-    - Assets/MovementArrows/002.prefab.meta
-    - Assets/MovementArrows/003.prefab
-    - Assets/MovementArrows/003.prefab.meta
-    - Assets/MovementArrows/004.prefab
-    - Assets/MovementArrows/004.prefab.meta
-    - Assets/MovementArrows/005.prefab
-    - Assets/MovementArrows/005.prefab.meta
-    - Assets/MovementArrows/006.prefab
-    - Assets/MovementArrows/006.prefab.meta
-    - Assets/MovementArrows/007.prefab
-    - Assets/MovementArrows/007.prefab.meta
-    - Assets/MovementArrows/008.prefab
-    - Assets/MovementArrows/008.prefab.meta
-    - Assets/MovementArrows/009.prefab
-    - Assets/MovementArrows/009.prefab.meta
-    - Assets/MovementArrows/010.prefab
-    - Assets/MovementArrows/010.prefab.meta
-    - Assets/MovementArrows/011.prefab
-    - Assets/MovementArrows/011.prefab.meta
-    - Assets/MovementArrows/012.prefab
-    - Assets/MovementArrows/012.prefab.meta
-    - Assets/MovementArrows/013.prefab
-    - Assets/MovementArrows/013.prefab.meta
-    - Assets/MovementArrows/014.prefab
-    - Assets/MovementArrows/014.prefab.meta
-    - Assets/MovementArrows/015.prefab
-    - Assets/MovementArrows/015.prefab.meta
-    - Assets/MovementArrows/016.prefab
-    - Assets/MovementArrows/016.prefab.meta
-    - Assets/MovementArrows/017.prefab
-    - Assets/MovementArrows/017.prefab.meta
-    - Assets/MovementArrows/018.prefab
-    - Assets/MovementArrows/018.prefab.meta
-    - Assets/MovementArrows/019.prefab
-    - Assets/MovementArrows/019.prefab.meta
-    - Assets/MovementArrows/020.prefab
-    - Assets/MovementArrows/020.prefab.meta
-    - Assets/MovementArrows/021.prefab
-    - Assets/MovementArrows/021.prefab.meta
-    - Assets/MovementArrows/022.prefab
-    - Assets/MovementArrows/022.prefab.meta
-    - Assets/MovementArrows/023.prefab
-    - Assets/MovementArrows/023.prefab.meta
-    - Assets/MovementArrows/024.prefab
-    - Assets/MovementArrows/024.prefab.meta
-    - Assets/MovementArrows/025.prefab
-    - Assets/MovementArrows/025.prefab.meta
-    - Assets/MovementArrows/026.prefab
-    - Assets/MovementArrows/026.prefab.meta
-    - Assets/MovementArrows/027.prefab
-    - Assets/MovementArrows/027.prefab.meta
-    - Assets/MovementArrows/028.prefab
-    - Assets/MovementArrows/028.prefab.meta
-    - Assets/MovementArrows/029.prefab
-    - Assets/MovementArrows/029.prefab.meta
-    - Assets/MovementArrows/030.prefab
-    - Assets/MovementArrows/030.prefab.meta
-    - Assets/MovementArrows/031.prefab
-    - Assets/MovementArrows/031.prefab.meta
-    - Assets/MovementArrows/032.prefab
-    - Assets/MovementArrows/032.prefab.meta
-    - Assets/MovementArrows/033.prefab
-    - Assets/MovementArrows/033.prefab.meta
-    - Assets/MovementArrows/034.prefab
-    - Assets/MovementArrows/034.prefab.meta
-    - Assets/MovementArrows/035.prefab
-    - Assets/MovementArrows/035.prefab.meta
-    - Assets/MovementArrows/036.prefab
-    - Assets/MovementArrows/036.prefab.meta
-    - Assets/MovementArrows/037.prefab
-    - Assets/MovementArrows/037.prefab.meta
-    - Assets/MovementArrows/038.prefab
-    - Assets/MovementArrows/038.prefab.meta
-    - Assets/MovementArrows/039.prefab
-    - Assets/MovementArrows/039.prefab.meta
-    - Assets/MovementArrows/040.prefab
-    - Assets/MovementArrows/040.prefab.meta
-    - Assets/MovementArrows/041.prefab
-    - Assets/MovementArrows/041.prefab.meta
-    - Assets/MovementArrows/042.prefab
-    - Assets/MovementArrows/042.prefab.meta
-    - Assets/MovementArrows/043.prefab
-    - Assets/MovementArrows/043.prefab.meta
-    - Assets/MovementArrows/044.prefab
-    - Assets/MovementArrows/044.prefab.meta
-    - Assets/MovementArrows/045.prefab
-    - Assets/MovementArrows/045.prefab.meta
-    - Assets/MovementArrows/046.prefab
-    - Assets/MovementArrows/046.prefab.meta
-    - Assets/MovementArrows/047.prefab
-    - Assets/MovementArrows/047.prefab.meta
-    - Assets/MovementArrows/048.prefab
-    - Assets/MovementArrows/048.prefab.meta
-    - Assets/MovementArrows/049.prefab
-    - Assets/MovementArrows/049.prefab.meta
-    - Assets/MovementArrows/050.prefab
-    - Assets/MovementArrows/050.prefab.meta
-    - Assets/MovementArrows/051.prefab
-    - Assets/MovementArrows/051.prefab.meta
-    - Assets/MovementArrows/052.prefab
-    - Assets/MovementArrows/052.prefab.meta
-    - Assets/MovementArrows/053.prefab
-    - Assets/MovementArrows/053.prefab.meta
-    - Assets/MovementArrows/054.prefab
-    - Assets/MovementArrows/054.prefab.meta
-    - Assets/MovementArrows/055.prefab
-    - Assets/MovementArrows/055.prefab.meta
-    - Assets/MovementArrows/056.prefab
-    - Assets/MovementArrows/056.prefab.meta
-    - Assets/MovementArrows/057.prefab
-    - Assets/MovementArrows/057.prefab.meta
-    - Assets/MovementArrows/058.prefab
-    - Assets/MovementArrows/058.prefab.meta
-    - Assets/MovementArrows/059.prefab
-    - Assets/MovementArrows/059.prefab.meta
-    - Assets/MovementArrows/060.prefab
-    - Assets/MovementArrows/060.prefab.meta
-    - Assets/MovementArrows/061.prefab
-    - Assets/MovementArrows/061.prefab.meta
-    - Assets/MovementArrows/062.prefab
-    - Assets/MovementArrows/062.prefab.meta
-    - Assets/MovementArrows/063.prefab
-    - Assets/MovementArrows/063.prefab.meta
-    - Assets/MovementArrows/064.prefab
-    - Assets/MovementArrows/064.prefab.meta
-    - Assets/MovementArrows/065.prefab
-    - Assets/MovementArrows/065.prefab.meta
-    - Assets/MovementArrows/066.prefab
-    - Assets/MovementArrows/066.prefab.meta
-    - Assets/MovementArrows/067.prefab
-    - Assets/MovementArrows/067.prefab.meta
-    - Assets/MovementArrows/068.prefab
-    - Assets/MovementArrows/068.prefab.meta
-    - Assets/MovementArrows/069.prefab
-    - Assets/MovementArrows/069.prefab.meta
-    - Assets/MovementArrows/070.prefab
-    - Assets/MovementArrows/070.prefab.meta
-    - Assets/MovementArrows/071.prefab
-    - Assets/MovementArrows/071.prefab.meta
-    - Assets/MovementArrows/072.prefab
-    - Assets/MovementArrows/072.prefab.meta
-    - Assets/MovementArrows/073.prefab
-    - Assets/MovementArrows/073.prefab.meta
-    - Assets/MovementArrows/074.prefab
-    - Assets/MovementArrows/074.prefab.meta
-    - Assets/MovementArrows/075.prefab
-    - Assets/MovementArrows/075.prefab.meta
-    - Assets/MovementArrows/076.prefab
-    - Assets/MovementArrows/076.prefab.meta
-    - Assets/MovementArrows/077.prefab
-    - Assets/MovementArrows/077.prefab.meta
-    - Assets/MovementArrows/078.prefab
-    - Assets/MovementArrows/078.prefab.meta
-    - Assets/MovementArrows/079.prefab
-    - Assets/MovementArrows/079.prefab.meta
-    - Assets/MovementArrows/080.prefab
-    - Assets/MovementArrows/080.prefab.meta
-    - Assets/MovementArrows/081.prefab
-    - Assets/MovementArrows/081.prefab.meta
-    - Assets/MovementArrows/082.prefab
-    - Assets/MovementArrows/082.prefab.meta
-    - Assets/MovementArrows/083.prefab
-    - Assets/MovementArrows/083.prefab.meta
-    - Assets/MovementArrows/084.prefab
-    - Assets/MovementArrows/084.prefab.meta
-    - Assets/MovementArrows/085.prefab
-    - Assets/MovementArrows/085.prefab.meta
-    - Assets/MovementArrows/086.prefab
-    - Assets/MovementArrows/086.prefab.meta
-    - Assets/MovementArrows/087.prefab
-    - Assets/MovementArrows/087.prefab.meta
-    - Assets/MovementArrows/088.prefab
-    - Assets/MovementArrows/088.prefab.meta
-    - Assets/MovementArrows/089.prefab
-    - Assets/MovementArrows/089.prefab.meta
-    - Assets/MovementArrows/090.prefab
-    - Assets/MovementArrows/090.prefab.meta
-    - Assets/MovementArrows/091.prefab
-    - Assets/MovementArrows/091.prefab.meta
-    - Assets/MovementArrows/092.prefab
-    - Assets/MovementArrows/092.prefab.meta
-    - Assets/MovementArrows/093.prefab
-    - Assets/MovementArrows/093.prefab.meta
-    - Assets/MovementArrows/094.prefab
-    - Assets/MovementArrows/094.prefab.meta
-    - Assets/MovementArrows/095.prefab
-    - Assets/MovementArrows/095.prefab.meta
-    - Assets/MovementArrows/096.prefab
-    - Assets/MovementArrows/096.prefab.meta
-    - Assets/MovementArrows/097.prefab
-    - Assets/MovementArrows/097.prefab.meta
-    - Assets/MovementArrows/098.prefab
-    - Assets/MovementArrows/098.prefab.meta
-    - Assets/MovementArrows/099.prefab
-    - Assets/MovementArrows/099.prefab.meta
-    - Assets/MovementArrows/100.prefab
-    - Assets/MovementArrows/100.prefab.meta
-    - Assets/MovementArrows/101.prefab
-    - Assets/MovementArrows/101.prefab.meta
-    - Assets/MovementArrows/102.prefab
-    - Assets/MovementArrows/102.prefab.meta
+    - Assets/MainMenu_Profiles.meta
+    - Assets/MainMenu_Profiles/Main Camera Profile.asset
+    - Assets/MainMenu_Profiles/Main Camera Profile.asset.meta
     - Assets/OptionMenu.asset
     - Assets/OptionMenu.asset.meta
-    - Assets/PopUp.prefab
-    - Assets/PopUp.prefab.meta
-    - Assets/QuestionMarl.png
-    - Assets/QuestionMarl.png.meta
+    - Assets/Prefabs.meta
+    - Assets/Prefabs/0.prefab
+    - Assets/Prefabs/0.prefab.meta
+    - Assets/Prefabs/000.prefab
+    - Assets/Prefabs/000.prefab.meta
+    - Assets/Prefabs/1.prefab
+    - Assets/Prefabs/1.prefab.meta
+    - Assets/Prefabs/Follow.mat
+    - Assets/Prefabs/Follow.mat.meta
+    - Assets/Prefabs/PopUp.prefab
+    - Assets/Prefabs/PopUp.prefab.meta
+    - Assets/Prefabs/Test.mat
+    - Assets/Prefabs/Test.mat.meta
     - Assets/Resources.meta
     - Assets/Resources/GraphInfo.txt
     - Assets/Resources/GraphInfo.txt.meta
@@ -544,6 +354,8 @@ MonoBehaviour:
     - Assets/Scripts/ClickableInformation.cs.meta
     - Assets/Scripts/CompassDirection.cs
     - Assets/Scripts/CompassDirection.cs.meta
+    - Assets/Scripts/FaceTowardsCamera.cs
+    - Assets/Scripts/FaceTowardsCamera.cs.meta
     - Assets/Scripts/GraphInfomation.cs
     - Assets/Scripts/GraphInfomation.cs.meta
     - Assets/Scripts/GuideSystem.cs
@@ -781,10 +593,6 @@ MonoBehaviour:
     - Assets/Skyboxs/106.mat.meta
     - Assets/Skyboxs/107.mat
     - Assets/Skyboxs/107.mat.meta
-    - Assets/Test.PNG
-    - Assets/Test.PNG.meta
-    - Assets/Test.mat
-    - Assets/Test.mat.meta
     - Assets/TextMesh Pro.meta
     - Assets/TextMesh Pro/Documentation.meta
     - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
@@ -860,12 +668,10 @@ MonoBehaviour:
     - Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
     - Assets/TextMesh Pro/Sprites/EmojiOne.png
     - Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
-    - Assets/Untitled.png
-    - Assets/Untitled.png.meta
     - Assets/VideoPlayer.unity
     - Assets/VideoPlayer.unity.meta
-    - Assets/search-icon-png-9985.png
-    - Assets/search-icon-png-9985.png.meta
+    - Packages/manifest.json
+    - Packages/packages-lock.json
     - ProjectSettings/EditorBuildSettings.asset
     - ProjectSettings/GraphicsSettings.asset
     - ProjectSettings/InputManager.asset
@@ -874,7 +680,7 @@ MonoBehaviour:
     - ProjectSettings/TagManager.asset
     - ProjectSettings/UnityConnectSettings.asset
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

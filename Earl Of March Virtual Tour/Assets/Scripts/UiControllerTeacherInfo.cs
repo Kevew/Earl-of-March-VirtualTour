@@ -42,7 +42,26 @@ public class UiControllerTeacherInfo : MonoBehaviour
     {
         GUIUtility.systemCopyBuffer = EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
     }
+
+    private float textSize;
     void Start()
+    {
+        setupTeacherinfo();
+        getTextSize();
+    }
+
+    void getTextSize()
+    {
+        GameObject b = (GameObject)Instantiate(option1, option1.transform.position, option1.transform.rotation);
+        b.transform.SetParent(content.transform, false);
+        b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Bonnell, Cynthia Educational Assistant cynthia.bonnell @ocdsb.ca";
+        option1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enableAutoSizing = true;
+        textSize = option1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize;
+        option1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enableAutoSizing = false;
+        Destroy(b);
+    }
+
+    void setupTeacherinfo()
     {
         Object path = Resources.Load("TeacherInformation");
         TextAsset reader = path as TextAsset;
@@ -54,13 +73,13 @@ public class UiControllerTeacherInfo : MonoBehaviour
         foreach (string email in lines)
         {
 
-            if (i%3 == 2)
+            if (i % 3 == 2)
             {
-                if(position == "Secondary\r")
+                if (position == "Secondary\r")
                 {
                     secondary.Add(new teacher(name, position, email));
                 }
-                else if(position == "Intermediate\r")
+                else if (position == "Intermediate\r")
                 {
                     intermediate.Add(new teacher(name, position, email));
                 }
@@ -74,7 +93,6 @@ public class UiControllerTeacherInfo : MonoBehaviour
             position = email;
         }
     }
-
     public void openTeacherInfo()
     {
         teacherInfo.SetActive(true);
@@ -106,7 +124,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             if (i == 0)
             {
                 GameObject b = (GameObject)Instantiate(option1, option1.transform.position, option1.transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -114,7 +133,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             else
             {
                 GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -126,7 +146,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             if(i == 0)
             {
                 GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform,false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -134,7 +155,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             else
             {
                 GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -146,7 +168,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             if (i == 0)
             {
                 GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -154,7 +177,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             else
             {
                 GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -176,7 +200,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             if (i == 0)
             {
                 GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -184,7 +209,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             else
             {
                 GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -205,7 +231,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             if (i == 0)
             {
                 GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -213,7 +240,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
             else
             {
                 GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content);
+                b.transform.SetParent(content.transform, false);
+                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                 b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
                 b.SetActive(true);
                 current.Add(b);
@@ -240,7 +268,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 if (i == 0)
                 {
                     GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);
@@ -248,7 +277,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 else
                 {
                     GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);
@@ -268,7 +298,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 if (i == 0)
                 {
                     GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);
@@ -276,7 +307,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 else
                 {
                     GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);
@@ -296,7 +328,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 if (i == 0)
                 {
                     GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);
@@ -304,7 +337,8 @@ public class UiControllerTeacherInfo : MonoBehaviour
                 else
                 {
                     GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                    b.transform.SetParent(content);
+                    b.transform.SetParent(content.transform, false);
+                    b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
                     b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = used;
                     b.SetActive(true);
                     current.Add(b);

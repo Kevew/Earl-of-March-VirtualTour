@@ -47,7 +47,7 @@ public class GraphInfomation: MonoBehaviour
     public GameObject sphereMesh;
 
     public List<Material> listoflocations;
-    public List<GameObject> listofArrowMovement;
+    public GameObject ArrowMovement;
     public int currentLoc;
 
     public List<GameObject> currArrowMovement;
@@ -170,7 +170,13 @@ public class GraphInfomation: MonoBehaviour
         {
             foreach (node g in arrowlocations[listoflocations[currentLoc]])
             {
-                GameObject a = (GameObject)Instantiate(listofArrowMovement[g.arrow], g.location, transform.rotation);
+                GameObject a = (GameObject)Instantiate(ArrowMovement, g.location, transform.rotation);
+                string newname = g.arrow.ToString();
+                while(newname.Length < 3)
+                {
+                    newname = "0"+ newname;
+                }
+                a.name = newname;
                 a.transform.localScale = g.scale;
                 a.tag = g.rotation.ToString();
                 int curr = int.Parse(a.name.Substring(0,3));

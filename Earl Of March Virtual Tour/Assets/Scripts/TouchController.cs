@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
 
 public class TouchController : MonoBehaviour
 {
     public float Speed = 5f;
     private float pitch = 0f;
     private float yaw = 0f;
+
+    MotionBlur motionBlur;
 
     public List<KeyCode> keybinds;
     int keypressed = -1;
@@ -22,6 +25,7 @@ public class TouchController : MonoBehaviour
     public Toggle firstperson;
 
     private void Start(){
+        motionBlur = GetComponent<PostProcessVolume>().profile.GetSetting<MotionBlur>();
         yaw = 0f;
         pitch = 0f;
         keypressed = -1;
@@ -46,6 +50,7 @@ public class TouchController : MonoBehaviour
     }
     //The two camera movement methods
     private void Update(){
+        motionBlur.shutterAngle.value = ui.motionscroll.value * 100f * 3.6f;
         if (Input.GetKeyDown(KeyCode.Escape) && firstperson.isOn)
         {
             if(Cursor.lockState == CursorLockMode.Locked)
