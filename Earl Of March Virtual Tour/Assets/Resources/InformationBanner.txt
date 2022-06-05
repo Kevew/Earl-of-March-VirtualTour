@@ -1,3 +1,6 @@
-061 78.30 43.15 89.50 10.20 10.00 01.00
-Title
-Text
+061 78.30 43.15 89.50 07.20 07.00 01.00
+Register for Attendence
+Do you happen to be late to school? Don't go to your classroom just yet! Instead of finding your current classroom, come over here to sign yourself in!
+061 78.30 43.15 53.50 05.20 05.00 01.00
+Office Adminstration
+Have any questions or concerns related to the school or your child? Arrive at this desk to have your problem answered!

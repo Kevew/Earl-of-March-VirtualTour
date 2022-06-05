@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.UI;
 
 public class UiControllerTeacherInfo : MonoBehaviour
 {
@@ -39,14 +39,12 @@ public class UiControllerTeacherInfo : MonoBehaviour
     private List<teacher> others = new List<teacher>();
 
     private List<GameObject> current = new List<GameObject>();
-    public void copyToClip()
-    {
-        GUIUtility.systemCopyBuffer = EventSystem.current.currentSelectedGameObject.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-    }
 
+    float alphaofCopyInfoUI;
     private float textSize;
     void Start()
     {
+        alphaofCopyInfoUI = 1f;
         setupTeacherinfo();
         getTextSize();
     }
@@ -60,6 +58,33 @@ public class UiControllerTeacherInfo : MonoBehaviour
         textSize = option1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize;
         option1.transform.GetChild(0).GetComponent<TextMeshProUGUI>().enableAutoSizing = false;
         Destroy(b);
+    }
+    public void CopyInfo()
+    {
+        alphaofCopyInfoUI = 3f;
+    }
+
+    public Image copyUI;
+    public TextMeshProUGUI copyUIText;
+    void Update()
+    {
+        if(alphaofCopyInfoUI < 0f)
+        {
+            alphaofCopyInfoUI = 0f;
+        }
+        else
+        {
+            alphaofCopyInfoUI -= Time.deltaTime;
+        }
+        if(copyUI.color.a != alphaofCopyInfoUI)
+        {
+            copyUI.color = new Color(copyUI.color.r, copyUI.color.g, copyUI.color.b, Mathf.Min(1f, alphaofCopyInfoUI));
+            copyUIText.color = new Color(copyUIText.color.r, copyUIText.color.g, copyUIText.color.b, Mathf.Min(1f, alphaofCopyInfoUI));
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) && teacherInfo.activeSelf)
+        {
+            searchTeach();
+        }
     }
 
     void setupTeacherinfo()
@@ -128,6 +153,16 @@ public class UiControllerTeacherInfo : MonoBehaviour
         }
     }
 
+
+    private void addNewGameObject(GameObject op, teacher a)
+    {
+        GameObject b = (GameObject)Instantiate(op, option1.transform.position, option1.transform.rotation);
+        b.transform.SetParent(content.transform, false);
+        b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
+        b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
+        b.SetActive(true);
+        current.Add(b);
+    }
     public void showallstaff()
     {
         resetList();
@@ -139,21 +174,11 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if (i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, option1.transform.position, option1.transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option1, a);
             }
             else
             {
-                GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option2, a);
             }
             i = 1 - i;
         }
@@ -161,21 +186,11 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if(i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform,false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option1, a);
             }
             else
             {
-                GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option2, a);
             }
             i = 1 - i;
         }
@@ -183,21 +198,11 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if (i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option1, a);
             }
             else
             {
-                GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option2, a);
             }
             i = 1 - i;
         }
@@ -215,21 +220,11 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if (i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option1, a);
             }
             else
             {
-                GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option2, a);
             }
             i = 1 - i;
         }
@@ -246,27 +241,15 @@ public class UiControllerTeacherInfo : MonoBehaviour
         {
             if (i == 0)
             {
-                GameObject b = (GameObject)Instantiate(option1, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option1, a);
             }
             else
             {
-                GameObject b = (GameObject)Instantiate(option2, transform.position, transform.rotation);
-                b.transform.SetParent(content.transform, false);
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().fontSize = textSize;
-                b.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (a.name + ", " + a.position + ", " + a.email).Replace("\r", "").Replace("\n", "");
-                b.SetActive(true);
-                current.Add(b);
+                addNewGameObject(option2, a);
             }
             i = 1 - i;
         }
     }
-
-
 
     public void searchTeach()
     {

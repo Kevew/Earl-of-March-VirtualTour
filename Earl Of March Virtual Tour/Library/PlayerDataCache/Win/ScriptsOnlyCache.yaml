@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - ArrowMovement
+    - AudioManager
     - ClickableInformation
     - CompassDirection
     - FaceTowardsCamera
@@ -9,6 +10,7 @@ ScriptsOnlyBuild:
     - GuideSystem
     - Movement
     - ObjectPlacement
+    - OnPopUpCopy
     - TouchController
     - TutorialController
     - UIController
@@ -47,10 +49,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,6 +105,8 @@ ScriptsOnlyBuild:
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -181,19 +183,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13826}
     - Class: 114
-      Script: {instanceID: 13954}
+      Script: {instanceID: 13860}
     - Class: 114
-      Script: {instanceID: 14006}
+      Script: {instanceID: 13956}
     - Class: 114
-      Script: {instanceID: 14022}
+      Script: {instanceID: 14008}
     - Class: 114
-      Script: {instanceID: 14136}
+      Script: {instanceID: 14024}
     - Class: 114
-      Script: {instanceID: 14158}
+      Script: {instanceID: 14054}
     - Class: 114
-      Script: {instanceID: 14168}
+      Script: {instanceID: 14140}
     - Class: 114
-      Script: {instanceID: 14188}
+      Script: {instanceID: 14162}
+    - Class: 114
+      Script: {instanceID: 14172}
+    - Class: 114
+      Script: {instanceID: 14192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,11 +264,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13648}
     - Class: 114
-      Script: {instanceID: 13900}
+      Script: {instanceID: 13902}
     - Class: 114
-      Script: {instanceID: 14120}
+      Script: {instanceID: 14124}
     - Class: 114
-      Script: {instanceID: 14136}
+      Script: {instanceID: 14140}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -366,7 +372,7 @@ ScriptsOnlyBuild:
     className: MotionBlur
   - hash:
       serializedVersion: 2
-      Hash: 682476dacb5d141e0dd794b8c317c152
+      Hash: 927e154e826fc0ba1cc40efa28e95e99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CompassDirection
@@ -534,7 +540,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 3138ca0b37627b81d4433d63abd5cb58
+      Hash: 7119c80049b22243c07e8437c29fd4f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UiControllerTeacherInfo
@@ -648,7 +654,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e0c959ffc0cc3e56cfd5ed00956a8f13
+      Hash: dc84cc491523e071b12cbf13655c9d10
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClickableInformation
@@ -732,10 +738,16 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 47fc08918b0b7e3a375451f06fbba84f
+      Hash: 6819b479d35419562cce568294d2224b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Movement
+  - hash:
+      serializedVersion: 2
+      Hash: ae139956006c22bd9c4588e0c305fbd2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -790,6 +802,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: AmbientOcclusion
+  - hash:
+      serializedVersion: 2
+      Hash: 474967d34f8876f3ee055b164e9a9330
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnPopUpCopy
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -890,4 +908,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/VideoPlayer.unity
   - Assets/MainMenu.unity
-  playerPath: C:/Users/wei00/Documents/Builds/Mar 20/Earl Of March Virtual Tour.exe
+  playerPath: C:/Users/wei00/Documents/Builds/Mar 25/Earl Of March Virtual Tour.exe

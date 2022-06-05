@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
     public Scrollbar scrollcamdepth;
     public Camera cam;
 
+    private ClickableInformation click;
+
     public Toggle zoomInEnable;
 
     public TouchController touch;
@@ -60,6 +62,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         guideortele = 1;
+        click = GetComponent<ClickableInformation>();
         setup();
         guideSystem = GetComponent<GuideSystem>();
     }
@@ -90,8 +93,6 @@ public class UIController : MonoBehaviour
             enableGuideSystemUIbutton.SetActive(true);
         }
     }
-
-    bool fun = false;
 
     //Change color of guidesystem UI area
     private void FixedUpdate()
@@ -218,6 +219,7 @@ public class UIController : MonoBehaviour
         }
         else
         {
+            click.closePopup();
             enabler.SetActive(true);
             changer.text = "-";
         }
@@ -239,16 +241,21 @@ public class UIController : MonoBehaviour
     //But first it gotta check if the place is a real location, then check whether you are already at the locaiton
     //Then it calls the functions
     public void enterButtonPush(){
-        if(info.ContainsKey(input.text)){
+        string inputText = input.text;
+        for(char i = 'a',j = 'A';i <= 'z'; i++,j++)
+        {
+            inputText = inputText.Replace(i, j);
+        }
+        if(info.ContainsKey(inputText)){
             if (guideortele == 1){
-                if(sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[input.text]]){
-                    guideSystem.findpath(sphereMesh.GetComponent<Renderer>().material, guideSystem.a[info[input.text]]);
+                if(sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[inputText]]){
+                    guideSystem.findpath(sphereMesh.GetComponent<Renderer>().material, guideSystem.a[info[inputText]]);
                 }else{
                     input.text = "Error:Same location";
                 }
             }else{
-                if (sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[input.text]]){
-                    guideSystem.teleportsystem(guideSystem.a[info[input.text]]);
+                if (sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[inputText]]){
+                    guideSystem.teleportsystem(guideSystem.a[info[inputText]]);
                 }else{
                     input.text = "Error:Same location";
                 }

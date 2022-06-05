@@ -70,6 +70,23 @@ MonoBehaviour:
     - Assets/Animations/TeacherAnim/TeacherExit.anim.meta
     - Assets/Animations/TeacherAnim/TeacherInfo.controller
     - Assets/Animations/TeacherAnim/TeacherInfo.controller.meta
+    - Assets/Audio.meta
+    - Assets/Audio/Danny Baranowsky - The Battle of Lil' Slugger (Ch 1 Boss Extended
+      Cut).mp3
+    - Assets/Audio/Danny Baranowsky - The Battle of Lil' Slugger (Ch 1 Boss Extended
+      Cut).mp3.meta
+    - Assets/Audio/DragonForce - Valley of the Damned.mp3
+    - Assets/Audio/DragonForce - Valley of the Damned.mp3.meta
+    - Assets/Audio/Feint - Vagrant (Feat. Veela).mp3
+    - Assets/Audio/Feint - Vagrant (Feat. Veela).mp3.meta
+    - Assets/Audio/Minamichita EVOLVED.mp3
+    - Assets/Audio/Minamichita EVOLVED.mp3.meta
+    - Assets/Audio/On&On.mp3
+    - Assets/Audio/On&On.mp3.meta
+    - Assets/Audio/The Pretender.mp3
+    - Assets/Audio/The Pretender.mp3.meta
+    - Assets/Audio/dmc.mp3
+    - Assets/Audio/dmc.mp3.meta
     - Assets/Fonts.meta
     - Assets/Fonts/LICENSE.txt
     - Assets/Fonts/LICENSE.txt.meta
@@ -106,10 +123,10 @@ MonoBehaviour:
     - Assets/ImageSprites/Compass2.png.meta
     - Assets/ImageSprites/EOM_Logo.png
     - Assets/ImageSprites/EOM_Logo.png.meta
+    - Assets/ImageSprites/FollowArrow.PNG
+    - Assets/ImageSprites/FollowArrow.PNG.meta
     - Assets/ImageSprites/QuestionMarl.png
     - Assets/ImageSprites/QuestionMarl.png.meta
-    - Assets/ImageSprites/Test.PNG
-    - Assets/ImageSprites/Test.PNG.meta
     - Assets/ImageSprites/Untitled.png
     - Assets/ImageSprites/Untitled.png.meta
     - Assets/ImageSprites/search-icon-png-9985.png
@@ -325,6 +342,73 @@ MonoBehaviour:
     - Assets/Images/103.jpg.meta
     - Assets/Images/104.jpg
     - Assets/Images/104.jpg.meta
+    - Assets/Images/105.jpg
+    - Assets/Images/105.jpg.meta
+    - Assets/Images/106.jpg
+    - Assets/Images/106.jpg.meta
+    - Assets/Images/107.jpg
+    - Assets/Images/107.jpg.meta
+    - Assets/Images/108.jpg
+    - Assets/Images/108.jpg.meta
+    - Assets/Images/109.jpg
+    - Assets/Images/109.jpg.meta
+    - Assets/Images/110.jpg
+    - Assets/Images/110.jpg.meta
+    - Assets/Images/111.jpg
+    - Assets/Images/111.jpg.meta
+    - Assets/Images/112.jpg
+    - Assets/Images/112.jpg.meta
+    - Assets/Images/113.jpg
+    - Assets/Images/113.jpg.meta
+    - Assets/Images/114.jpg
+    - Assets/Images/114.jpg.meta
+    - Assets/Images/115.jpg
+    - Assets/Images/115.jpg.meta
+    - Assets/Images/116.jpg
+    - Assets/Images/116.jpg.meta
+    - Assets/Images/117.jpg
+    - Assets/Images/117.jpg.meta
+    - Assets/Images/118.jpg
+    - Assets/Images/118.jpg.meta
+    - Assets/Images/119.jpg
+    - Assets/Images/119.jpg.meta
+    - Assets/Images/120.jpg
+    - Assets/Images/120.jpg.meta
+    - Assets/Images/121.jpg
+    - Assets/Images/121.jpg.meta
+    - Assets/Images/122.jpg
+    - Assets/Images/122.jpg.meta
+    - Assets/Images/123.jpg
+    - Assets/Images/123.jpg.meta
+    - Assets/Images/124.jpg
+    - Assets/Images/124.jpg.meta
+    - Assets/Images/125.jpg
+    - Assets/Images/125.jpg.meta
+    - Assets/Images/126.jpg
+    - Assets/Images/126.jpg.meta
+    - Assets/Images/127.jpg
+    - Assets/Images/127.jpg.meta
+    - Assets/Images/128.jpg
+    - Assets/Images/128.jpg.meta
+    - Assets/Images/129.jpg
+    - Assets/Images/129.jpg.meta
+    - Assets/Images/130.jpg
+    - Assets/Images/130.jpg.meta
+    - Assets/Images/131.jpg
+    - Assets/Images/131.jpg.meta
+    - Assets/Images/132.jpg
+    - Assets/Images/132.jpg.meta
+    - Assets/Images/133.jpg
+    - Assets/Images/133.jpg.meta
+    - Assets/Images/134.jpg
+    - Assets/Images/134.jpg.meta
+    - Assets/Images/135.jpg
+    - Assets/Images/135.jpg.meta
+    - Assets/Images/136.jpg
+    - Assets/Images/136.jpg.meta
+    - Assets/Images/137.jpg
+    - Assets/Images/137.jpg.meta
+    - Assets/MainMenu.meta
     - Assets/MainMenu.unity
     - Assets/MainMenu.unity.meta
     - Assets/MainMenu_Profiles.meta
@@ -359,6 +443,8 @@ MonoBehaviour:
     - Assets/Scripts.meta
     - Assets/Scripts/ArrowMovement.cs
     - Assets/Scripts/ArrowMovement.cs.meta
+    - Assets/Scripts/AudioManager.cs
+    - Assets/Scripts/AudioManager.cs.meta
     - Assets/Scripts/ClickableInformation.cs
     - Assets/Scripts/ClickableInformation.cs.meta
     - Assets/Scripts/CompassDirection.cs
@@ -373,6 +459,8 @@ MonoBehaviour:
     - Assets/Scripts/Movement.cs.meta
     - Assets/Scripts/ObjectPlacement.cs
     - Assets/Scripts/ObjectPlacement.cs.meta
+    - Assets/Scripts/OnPopUpCopy.cs
+    - Assets/Scripts/OnPopUpCopy.cs.meta
     - Assets/Scripts/TouchController.cs
     - Assets/Scripts/TouchController.cs.meta
     - Assets/Scripts/TutorialController.cs
@@ -602,6 +690,68 @@ MonoBehaviour:
     - Assets/Skyboxs/106.mat.meta
     - Assets/Skyboxs/107.mat
     - Assets/Skyboxs/107.mat.meta
+    - Assets/Skyboxs/108.mat
+    - Assets/Skyboxs/108.mat.meta
+    - Assets/Skyboxs/109.mat
+    - Assets/Skyboxs/109.mat.meta
+    - Assets/Skyboxs/110.mat
+    - Assets/Skyboxs/110.mat.meta
+    - Assets/Skyboxs/111.mat
+    - Assets/Skyboxs/111.mat.meta
+    - Assets/Skyboxs/112.mat
+    - Assets/Skyboxs/112.mat.meta
+    - Assets/Skyboxs/113.mat
+    - Assets/Skyboxs/113.mat.meta
+    - Assets/Skyboxs/114.mat
+    - Assets/Skyboxs/114.mat.meta
+    - Assets/Skyboxs/115.mat
+    - Assets/Skyboxs/115.mat.meta
+    - Assets/Skyboxs/116.mat
+    - Assets/Skyboxs/116.mat.meta
+    - Assets/Skyboxs/117.mat
+    - Assets/Skyboxs/117.mat.meta
+    - Assets/Skyboxs/118.mat
+    - Assets/Skyboxs/118.mat.meta
+    - Assets/Skyboxs/119.mat
+    - Assets/Skyboxs/119.mat.meta
+    - Assets/Skyboxs/120.mat
+    - Assets/Skyboxs/120.mat.meta
+    - Assets/Skyboxs/121.mat
+    - Assets/Skyboxs/121.mat.meta
+    - Assets/Skyboxs/122.mat
+    - Assets/Skyboxs/122.mat.meta
+    - Assets/Skyboxs/123.mat
+    - Assets/Skyboxs/123.mat.meta
+    - Assets/Skyboxs/124.mat
+    - Assets/Skyboxs/124.mat.meta
+    - Assets/Skyboxs/125.mat
+    - Assets/Skyboxs/125.mat.meta
+    - Assets/Skyboxs/126.mat
+    - Assets/Skyboxs/126.mat.meta
+    - Assets/Skyboxs/127.mat
+    - Assets/Skyboxs/127.mat.meta
+    - Assets/Skyboxs/128.mat
+    - Assets/Skyboxs/128.mat.meta
+    - Assets/Skyboxs/129.mat
+    - Assets/Skyboxs/129.mat.meta
+    - Assets/Skyboxs/130.mat
+    - Assets/Skyboxs/130.mat.meta
+    - Assets/Skyboxs/131.mat
+    - Assets/Skyboxs/131.mat.meta
+    - Assets/Skyboxs/132.mat
+    - Assets/Skyboxs/132.mat.meta
+    - Assets/Skyboxs/133.mat
+    - Assets/Skyboxs/133.mat.meta
+    - Assets/Skyboxs/134.mat
+    - Assets/Skyboxs/134.mat.meta
+    - Assets/Skyboxs/135.mat
+    - Assets/Skyboxs/135.mat.meta
+    - Assets/Skyboxs/136.mat
+    - Assets/Skyboxs/136.mat.meta
+    - Assets/Skyboxs/137.mat
+    - Assets/Skyboxs/137.mat.meta
+    - Assets/Skyboxs/138.mat
+    - Assets/Skyboxs/138.mat.meta
     - Assets/TextMesh Pro.meta
     - Assets/TextMesh Pro/Documentation.meta
     - Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf
@@ -689,7 +839,7 @@ MonoBehaviour:
     - ProjectSettings/TagManager.asset
     - ProjectSettings/UnityConnectSettings.asset
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    m_Values: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

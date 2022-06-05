@@ -32,14 +32,12 @@ public class GraphInfomation: MonoBehaviour
     {
         public Vector3 location;
         public Vector3 scale;
-        public string title;
-        public string info;
-        public clicknode(Vector3 _location, Vector3 _scale, string _title, string _info)
+        public int name;
+        public clicknode(Vector3 _location, Vector3 _scale,int _name)
         {
             location = _location;
             scale = _scale;
-            title = _title;
-            info = _info;
+            name = _name;
         }
     }
 
@@ -71,15 +69,15 @@ public class GraphInfomation: MonoBehaviour
         guidesystem = GetComponent<GuideSystem>();
         uicontroller = GetComponent<UIController>();
         click = GetComponent<ClickableInformation>();
-        currentLoc = 60;
+        currentLoc = 105;
         readgraphInfo();
-        setup();
+        readInformationBanner();
         readtopRight();
         sphereMesh.GetComponent<Renderer>().material = listoflocations[currentLoc];
     }
 
     //Using InformationBanner.txt, the code gets all the values for where each location should have popups
-    private void setup()
+    private void readInformationBanner()
     {
         Object path = Resources.Load("InformationBanner");
         TextAsset reader = path as TextAsset;
@@ -89,7 +87,6 @@ public class GraphInfomation: MonoBehaviour
         int place = 0;
         //Vector3.up is placeholder
         Vector3 location = Vector3.up, scale = Vector3.up;
-        string titletext = "";
         for(int j = 0;j <= 200; j++)
         {
             listofPops[j] = new List<clicknode>();
@@ -105,15 +102,7 @@ public class GraphInfomation: MonoBehaviour
                 scale = new Vector3(float.Parse(line.Substring(22, 5)),
                                        float.Parse(line.Substring(28, 5)),
                                        float.Parse(line.Substring(34, 5)));
-
-            }
-            else if (i % 2 == 1)
-            {
-                titletext = line;
-            }
-            else
-            {
-                listofPops[place].Add(new clicknode(location, scale, titletext, line));
+                listofPops[place].Add(new clicknode(location, scale,i/3));
             }
             i++;
         }
@@ -205,12 +194,14 @@ public class GraphInfomation: MonoBehaviour
     //SameAsAbove but for clickpopups
     public void LoadNewMovementsClick()
     {
+        click.closePopup();
         if (listofPops[currentLoc].Count > 0)
         {
             foreach (clicknode g in listofPops[currentLoc])
             {
                 GameObject a = (GameObject)Instantiate(popupGO, g.location, transform.rotation);
                 a.transform.localScale = g.scale;
+                a.name = g.name.ToString();
                 currPopups.Add(a);
             }
         }

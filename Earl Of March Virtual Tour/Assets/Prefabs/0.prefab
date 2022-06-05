@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6663075558168933112}
   - component: {fileID: 6663075558168933111}
   - component: {fileID: 6663075558168933110}
+  - component: {fileID: 5631547181535943289}
   m_Layer: 5
   m_Name: 0
   m_TagString: Untagged
@@ -120,8 +121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UiControllerTeacherInfo, Assembly-CSharp
+      - m_Target: {fileID: 5631547181535943289}
+        m_TargetAssemblyTypeName: OnPopUpCopy, Assembly-CSharp
         m_MethodName: copyToClip
         m_Mode: 1
         m_Arguments:
@@ -132,6 +133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5631547181535943289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6663075558168933108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aed0ae2a6d48b4d840ef1542d7b52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6663075558248505657
 GameObject:
   m_ObjectHideFlags: 0

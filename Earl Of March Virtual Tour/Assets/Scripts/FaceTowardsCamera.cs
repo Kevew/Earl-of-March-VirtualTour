@@ -25,6 +25,12 @@ public class FaceTowardsCamera : MonoBehaviour
         return displayInfo;
     }
 
+    public string currentNameInfo()
+    {
+        return transform.name;
+    }
+
+
     // Update is called once per frame
     void Update()
     {

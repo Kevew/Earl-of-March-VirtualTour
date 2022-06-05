@@ -11,6 +11,8 @@ public class Movement : MonoBehaviour
     private GuideSystem guidesystem;
     public UIController uicontroller;
 
+    public Material testsky;
+
     public Text enableAtLocationText;
     public GameObject enableAtLocation;
 
@@ -30,6 +32,7 @@ public class Movement : MonoBehaviour
     List<Direction> dirc = new List<Direction>();
 
     //Get variables
+    //Set Direction for Movement
     void Awake()
     {
         guidesystem = GetComponent<GuideSystem>();
@@ -73,6 +76,7 @@ public class Movement : MonoBehaviour
         //One of the variables is the "test", basically when it's acitvated it will sent zoom in the camera or 
         //decrease field of view. It creates the zoom in effect for when you move.
         if (test){
+            //This is the zoom in effect
             if (uicontroller.zoomInEnable.isOn)
             {
                 float scrollvalue = uicontroller.scroll.value;
@@ -90,6 +94,7 @@ public class Movement : MonoBehaviour
             }
             else
             {
+                //The camera movement effect
                 if(currentTimeAnim <= timeAnim)
                 {
                     currentTimeAnim += Time.deltaTime;
@@ -112,7 +117,7 @@ public class Movement : MonoBehaviour
         //This line sets the location as a new place
         sphereMesh.GetComponent<Renderer>().material = graphinfo.listoflocations[id1];
         //This checks whether the guide path exists and if we reached our location, if it does it disables the path
-        if(guidesystem.currentguide != null)
+        if (guidesystem.currentguide != null)
         {
             if (int.Parse(guidesystem.currentguide.name.Substring(0, 3)) == id1)
             {
