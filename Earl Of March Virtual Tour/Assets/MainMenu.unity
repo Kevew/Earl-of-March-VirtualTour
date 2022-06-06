@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 7bf7eae4f83dc70449faaf52b53bed1d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 438dec7644ca00a42a018a5c27c86647, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -14143,8 +14143,32 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 14f52fbf01b29af4da96d75bae8f270c, type: 2}
   - {fileID: 2100000, guid: 8c5d996200851374fa4317b309aa91cb, type: 2}
   - {fileID: 2100000, guid: b1c54c37100a3d14c9e4e0ea267b8ef1, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2100000, guid: e5fe2905a42d10344a6ce7bc5dd79314, type: 2}
+  - {fileID: 2100000, guid: e9023c15cea434f47a53d1870fefebbf, type: 2}
+  - {fileID: 2100000, guid: 4e2ebbedc71d22245b388fe03d82b60f, type: 2}
+  - {fileID: 2100000, guid: 9a8c2c28045cb464baa6c1f8c8ebdf85, type: 2}
+  - {fileID: 2100000, guid: d22595765181f684fb19c169b2a0de45, type: 2}
+  - {fileID: 2100000, guid: 34fd8f561ba2a3442816a9ab0ce06811, type: 2}
+  - {fileID: 2100000, guid: 614b2a316dcb67b4994b4769ec3e5cfc, type: 2}
+  - {fileID: 2100000, guid: e7deef9adca26c94cb4e39b615615fcc, type: 2}
+  - {fileID: 2100000, guid: a40959ab987384946a18e39db8202285, type: 2}
+  - {fileID: 2100000, guid: 3324dede3cc22984f9167a6a3d06608a, type: 2}
+  - {fileID: 2100000, guid: f06592029ed2eec4d8557206c042d5ff, type: 2}
+  - {fileID: 2100000, guid: f4d45cac291f8604fa78d8d3f1459f45, type: 2}
+  - {fileID: 2100000, guid: 57ed16ca606afbf40b0dee9046f392d6, type: 2}
+  - {fileID: 2100000, guid: 8ef0732ca0486814cb603f6ecbc2902b, type: 2}
+  - {fileID: 2100000, guid: 887567ff07eda5440a4b53d59e9715d5, type: 2}
+  - {fileID: 2100000, guid: b6c38fb249fba17478aa9b5d8dc7e141, type: 2}
+  - {fileID: 2100000, guid: ce4d35aaa325db848bf73241cde70723, type: 2}
+  - {fileID: 2100000, guid: 12550da913ed53f49b08701b29834aaa, type: 2}
+  - {fileID: 2100000, guid: f59469b7d0a63b341b52c9ac92c633a9, type: 2}
+  - {fileID: 2100000, guid: 756d57ae12e4f954798c329069dee26b, type: 2}
+  - {fileID: 2100000, guid: 30a58bbb65dcd5d4cbe3c53a461e251e, type: 2}
+  - {fileID: 2100000, guid: 169c85390f06c8541898508ba50c6aab, type: 2}
+  - {fileID: 2100000, guid: a923d98de459d9949b46da60eabd150e, type: 2}
+  - {fileID: 2100000, guid: e348031e39bf679419f57cf1211a601b, type: 2}
+  - {fileID: 2100000, guid: f46e5a766dafc684b82bee16b51472f2, type: 2}
+  - {fileID: 2100000, guid: 438dec7644ca00a42a018a5c27c86647, type: 2}
   ArrowMovement: {fileID: 1725822456792265743, guid: f0d18060890ae0645a0b76b29cb144c6, type: 3}
   currentLoc: 0
   currArrowMovement: []
@@ -14300,6 +14324,32 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 14f52fbf01b29af4da96d75bae8f270c, type: 2}
   - {fileID: 2100000, guid: 8c5d996200851374fa4317b309aa91cb, type: 2}
   - {fileID: 2100000, guid: b1c54c37100a3d14c9e4e0ea267b8ef1, type: 2}
+  - {fileID: 2100000, guid: e5fe2905a42d10344a6ce7bc5dd79314, type: 2}
+  - {fileID: 2100000, guid: e9023c15cea434f47a53d1870fefebbf, type: 2}
+  - {fileID: 2100000, guid: 4e2ebbedc71d22245b388fe03d82b60f, type: 2}
+  - {fileID: 2100000, guid: 9a8c2c28045cb464baa6c1f8c8ebdf85, type: 2}
+  - {fileID: 2100000, guid: d22595765181f684fb19c169b2a0de45, type: 2}
+  - {fileID: 2100000, guid: 34fd8f561ba2a3442816a9ab0ce06811, type: 2}
+  - {fileID: 2100000, guid: 614b2a316dcb67b4994b4769ec3e5cfc, type: 2}
+  - {fileID: 2100000, guid: e7deef9adca26c94cb4e39b615615fcc, type: 2}
+  - {fileID: 2100000, guid: a40959ab987384946a18e39db8202285, type: 2}
+  - {fileID: 2100000, guid: 3324dede3cc22984f9167a6a3d06608a, type: 2}
+  - {fileID: 2100000, guid: f06592029ed2eec4d8557206c042d5ff, type: 2}
+  - {fileID: 2100000, guid: f4d45cac291f8604fa78d8d3f1459f45, type: 2}
+  - {fileID: 2100000, guid: 57ed16ca606afbf40b0dee9046f392d6, type: 2}
+  - {fileID: 2100000, guid: 8ef0732ca0486814cb603f6ecbc2902b, type: 2}
+  - {fileID: 2100000, guid: 887567ff07eda5440a4b53d59e9715d5, type: 2}
+  - {fileID: 2100000, guid: b6c38fb249fba17478aa9b5d8dc7e141, type: 2}
+  - {fileID: 2100000, guid: ce4d35aaa325db848bf73241cde70723, type: 2}
+  - {fileID: 2100000, guid: 12550da913ed53f49b08701b29834aaa, type: 2}
+  - {fileID: 2100000, guid: f59469b7d0a63b341b52c9ac92c633a9, type: 2}
+  - {fileID: 2100000, guid: 756d57ae12e4f954798c329069dee26b, type: 2}
+  - {fileID: 2100000, guid: 30a58bbb65dcd5d4cbe3c53a461e251e, type: 2}
+  - {fileID: 2100000, guid: 169c85390f06c8541898508ba50c6aab, type: 2}
+  - {fileID: 2100000, guid: a923d98de459d9949b46da60eabd150e, type: 2}
+  - {fileID: 2100000, guid: e348031e39bf679419f57cf1211a601b, type: 2}
+  - {fileID: 2100000, guid: f46e5a766dafc684b82bee16b51472f2, type: 2}
+  - {fileID: 2100000, guid: 169c85390f06c8541898508ba50c6aab, type: 2}
   activated: 
   currentguide: {fileID: 0}
   uicontroller: {fileID: 0}
@@ -21161,7 +21211,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 909072528}
   m_HandleRect: {fileID: 909072527}
   m_Direction: 0
-  m_Value: 0.52
+  m_Value: 0
   m_Size: 0.2
   m_NumberOfSteps: 0
   m_OnValueChanged:

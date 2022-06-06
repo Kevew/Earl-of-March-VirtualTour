@@ -134,7 +134,9 @@ public class TouchController : MonoBehaviour
             pitch = Mathf.Clamp(pitch, -90f, 90f);
         }
         //Finally with the new pitch and yaw you can set the new camera rotation.
-        transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+        var desiredRotation = Quaternion.Euler(pitch, yaw, 0f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, Time.deltaTime*20f);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,0f);
         
     }
 
