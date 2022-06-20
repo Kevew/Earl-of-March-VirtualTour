@@ -11,6 +11,9 @@ public class GuideSystem : MonoBehaviour
     public List<bool> activated;
     GraphInfomation graphinformation;
 
+    public Dictionary<int,int> dis = new Dictionary<int,int>();
+    public Dictionary<string, string> checkLoc = new Dictionary<string, string>();
+
     public Material currentguide;
     public UIController uicontroller;
 
@@ -20,7 +23,7 @@ public class GuideSystem : MonoBehaviour
     void Awake(){
         //Sets the entire path to nonexistant
         activated = new List<bool>();
-        for (int b = 0; b < 1000; b++)
+        for (int b = 0; b < 200; b++)
         {
             activated.Add(false);
         }
@@ -30,6 +33,7 @@ public class GuideSystem : MonoBehaviour
         //Sets all prefabs in the current location
         graphinformation.LoadNewMovements();
         graphinformation.LoadNewMovementsClick();
+        IntializaeDistance();
     }
 
 
@@ -53,6 +57,34 @@ public class GuideSystem : MonoBehaviour
             j++;
         }
     }
+
+    //Set's up all the dist between the locations so that you don't go through classrooms
+    void IntializaeDistance()
+    {
+        Object path = Resources.Load("TopRight");
+        TextAsset reader = path as TextAsset;
+        string temp = reader.text;
+        string[] lines = temp.Split("\n"[0]);
+        int j = 0;
+        foreach (string line in lines)
+        {
+            if (line.Substring(4, 4) == "Room")
+            {
+                dis[int.Parse(line.Substring(0, 3))] = 90;
+            }
+            else if (line.Substring(4, 3) == "Out")
+            {
+                dis[int.Parse(line.Substring(0, 3))] = 5;
+            }
+            else
+            {
+                dis[int.Parse(line.Substring(0, 3))] = 1;
+            }
+            checkLoc[line.Substring(0, 3)] = line.Substring(4, line.Length - 4);
+            j++;
+        }
+    }
+
 
     //This create the node which is the edge
     //Basically the first variable is the time, which allows me to later find the fastest way to reach this edge
@@ -86,14 +118,14 @@ public class GuideSystem : MonoBehaviour
     }
 
     //This function gets the path by using BFS (Breath first search) and then backtracks
-    public void findpath(Material a,Material b)
+    public void findpath(Material ab,Material b)
     {
         List<fastestnode> fastest = new List<fastestnode>();
         Queue<node> bfs = new Queue<node>();
         //Adds the current location to the queue
-        bfs.Enqueue(new node(0,a,a));
-        for(int i = 0;i < 1000; i++){
-            fastest.Add(new fastestnode(1000,a));
+        bfs.Enqueue(new node(0,ab,ab));
+        for(int i = 0;i < 200; i++){
+            fastest.Add(new fastestnode(1000,ab));
         }
         //This is the bfs section,it takes the first value in the queue, checks if reached this location the fastest
         //If it isn't then just destroy that value. If it is, then still destroy but set this location's time to the
@@ -108,19 +140,29 @@ public class GuideSystem : MonoBehaviour
                 fastest[int.Parse(temp.location.name.Substring(0, 3))].prev = temp.prev;
                 foreach (Material edge in edges[temp.location.name.Substring(0,3)])
                 {
-                    bfs.Enqueue(new node(temp.time + 1, edge, temp.location));
+                    bfs.Enqueue(new node(temp.time + dis[int.Parse(temp.location.name.Substring(0, 3))], edge, temp.location));
                 }
             }
         }
         //Resets the previous path
-        Material temp2 = b;
-        for (int i = 0; i < 1000; i++){
+        for (int i = 0; i < 200; i++){
             activated[i] = false;
         }
+        int fastestspeed = 9999, fastestloc = -1;
+        for (int i = 0; i < 200; i++)
+        {
+            if(fastest[i].time < fastestspeed && checkLoc[b.name.Substring(0,3)] == checkLoc[a[i].name.Substring(0,3)])
+            {
+                fastestspeed = fastest[i].time;
+                fastestloc = i;
+            }
+        }
+        Material temp2 = a[fastestloc];
+        currentguide = temp2;
         //This begings the backtrack. We start off with temp2 which is the location we want to go. Using the
         //fastestnode set this location prefab movement to true so it will display blue when shown.
         //Using the fastestnode go to the prev node and continue until you reach your current location.
-        while (temp2 != a){
+        while (temp2 != ab){
             activated[int.Parse(temp2.name.Substring(0, 3))] = true;
             temp2 = fastest[int.Parse(temp2.name.Substring(0, 3))].prev;
         }
@@ -132,7 +174,6 @@ public class GuideSystem : MonoBehaviour
                 obj.GetComponent<Renderer>().material.SetColor("_Color", new Color(0f, 0f, 255f, 0.01f));
             }
         }
-        currentguide = b;
     }
 
     //It gets the location it wants to go to
@@ -140,7 +181,7 @@ public class GuideSystem : MonoBehaviour
     //And load the new prefabs
     public void teleportsystem(Material setnew)
     {
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < 200; i++)
         {
             activated[i] = false;
         }

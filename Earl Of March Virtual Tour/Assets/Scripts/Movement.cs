@@ -121,7 +121,7 @@ public class Movement : MonoBehaviour
         {
             if (int.Parse(guidesystem.currentguide.name.Substring(0, 3)) == id1)
             {
-                enableAtLocationText.text = "You've reached " + uicontroller.seinfo[int.Parse(guidesystem.currentguide.name.Substring(0, 3))];
+                enableAtLocationText.text = "You've reached " + guidesystem.checkLoc[guidesystem.currentguide.name.Substring(0, 3)];
                 guidesystem.currentguide = null;
                 enableAtLocation.SetActive(true);
             }
@@ -129,7 +129,7 @@ public class Movement : MonoBehaviour
         graphinfo.currentLoc = id1;
         //Deletes the current scene prefabs
         graphinfo.deleteCurrentMovements();
-        graphinfo.deleteCurrentMovementsClick();
+      //  graphinfo.deleteCurrentMovementsClick();
         //You want to keep checking if we are on the path if it exists. If it exists and we just enter a new scene
         //that is on the graph, we set the path we just went on to false, so it will no longer display a blue prefab
         //If the path is activated but we did not go on a blue prefab, we have to recalculate the path as we went off
@@ -148,7 +148,7 @@ public class Movement : MonoBehaviour
         }
         //Adds the new scene prefabs
         graphinfo.LoadNewMovements();
-        graphinfo.LoadNewMovementsClick();
+       // graphinfo.LoadNewMovementsClick();
     }
 
     //Check if mouse over UI

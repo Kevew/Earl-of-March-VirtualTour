@@ -205,8 +205,24 @@ public class UIController : MonoBehaviour
         string[] lines = temp.Split("\n"[0]);
         foreach (string line in lines)
         {
-            info[line.Substring(0, 4)] = int.Parse(line.Substring(5, 3));
-            seinfo[int.Parse(line.Substring(5, 3))] = line.Substring(0, 4);
+            if(line.Substring(0,4) == "R258")
+            {
+                if (line[4] == 'A')
+                {
+                    info[line.Substring(0, 5)] = int.Parse(line.Substring(6, 3));
+                    seinfo[int.Parse(line.Substring(6, 3))] = line.Substring(0, 5);
+                }
+                else
+                {
+                    info[line.Substring(0, 4)] = int.Parse(line.Substring(5, 3));
+                    seinfo[int.Parse(line.Substring(5, 3))] = line.Substring(0, 4);
+                }
+            }
+            else
+            {
+                info[line.Substring(0, 4)] = int.Parse(line.Substring(5, 3));
+                seinfo[int.Parse(line.Substring(5, 3))] = line.Substring(0, 4);
+            }
         }
     }
     //Controls the small little UI button in the bottem left corner of the screen.
@@ -248,13 +264,14 @@ public class UIController : MonoBehaviour
         }
         if(info.ContainsKey(inputText)){
             if (guideortele == 1){
-                if(sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[inputText]]){
+                if(guideSystem.checkLoc[sphereMesh.GetComponent<Renderer>().material.name.Substring(0,3)] != guideSystem.checkLoc[guideSystem.a[info[inputText]].name.Substring(0,3)]){
                     guideSystem.findpath(sphereMesh.GetComponent<Renderer>().material, guideSystem.a[info[inputText]]);
                 }else{
                     input.text = "Error:Same location";
                 }
             }else{
-                if (sphereMesh.GetComponent<Renderer>().material != guideSystem.a[info[inputText]]){
+                if (guideSystem.checkLoc[sphereMesh.GetComponent<Renderer>().material.name.Substring(0, 3)] != guideSystem.checkLoc[guideSystem.a[info[inputText]].name.Substring(0, 3)])
+                {
                     guideSystem.teleportsystem(guideSystem.a[info[inputText]]);
                 }else{
                     input.text = "Error:Same location";

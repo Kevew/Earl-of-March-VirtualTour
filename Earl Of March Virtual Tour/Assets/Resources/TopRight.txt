@@ -78,8 +78,8 @@
 077 Room-271
 078 Room-273
 079 Room-174
-080 N/A
-081 N/A
+080 N/A 
+081 N/A 
 082 Room-175
 083 Room-175
 084 Room-175
@@ -95,7 +95,7 @@
 094 Room-176
 095 Room-179
 096 Room-181
-097 Room-258
+097 Room-258A
 098 Co-op
 099 Upper-Hall
 100 Lower-Hall
@@ -162,3 +162,8 @@
 161 Room-267
 162 Room-272
 163 Room-276
+164 Room-275
+165 Room-168
+166 Room-172
+167 Room-247
+168 Room-184
