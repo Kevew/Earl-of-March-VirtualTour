@@ -2,5 +2,6 @@
 
 A virtual tour of Earl of March Secondary School
 
-
-https://drive.google.com/file/d/1HTakFVNYSRniayPt1KYpNhprs6dMx05_/view?usp=sharing
+Main features:
+- Full 360 degree photos of the school
+- Built in guide system to navigate to specific locations
